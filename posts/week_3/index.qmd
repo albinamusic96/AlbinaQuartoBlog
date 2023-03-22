@@ -1,0 +1,35 @@
+---
+title: "Week 3"
+author: "Albina Music"
+date: "2023-02-18"
+categories: [tips]
+---
+
+1.  Be able to make a new .qmd document
+YES
+
+2.  Be able to render a .qmd document
+YES
+
+3.  Explain the difference between the source editor view and visual editor view in Rstudio.
+
+
+
+4.  Be able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.
+5.  Be aware of resources to help you learn more about markdown options.
+6.  Be able to insert an R code chunk, and show the output in the rendered document.
+
+-   macro for quick insert
+
+7.  Running R code chunks in a qmd
+
+-   pressing play
+-   copy/paste into console
+-   highlight then command-enter (mac)
+-   precedence issues (first to last)
+
+8.  Be aware of R code chunk options, and how to use eval, messages, error, warning, and echo.
+9.  Be able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)
+10. Write inline r code.
+11. Explain how the rendering environment is different from the Rstudio environment.
+12. Be aware of more advanced quarto options for html documents, and try some of the options.

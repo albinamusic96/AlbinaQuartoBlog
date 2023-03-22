@@ -2,7 +2,7 @@
 title: "tip sheet"
 author: "Albina Music"
 date: "2023-02-12"
-categories: [news]
+categories: [tips]
 ---
 
 put your tips here
