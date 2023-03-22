@@ -2,7 +2,7 @@
 title: "Week 3"
 author: "Albina Music"
 date: "2023-02-18"
-categories: [tips]
+categories: [qmd notes]
 ---
 
 1.  Be able to make a new .qmd document
