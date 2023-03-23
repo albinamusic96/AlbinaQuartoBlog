@@ -1,0 +1,14 @@
+{
+  "hash": "5155c20c3ad316854ee0f8ad954a155d",
+  "result": {
+    "markdown": "---\ntitle: \"Week 3\"\nauthor: \"Albina Music\"\ndate: \"2023-02-18\"\ncategories: [qmd notes]\n---\n\n\n1.  Be able to make a new .qmd document\nYES\n\n2.  Be able to render a .qmd document\nYES\n\n3.  Explain the difference between the source editor view and visual editor view in Rstudio.\n\n::: {.cell}\n\n:::\n\n\n4.  Be able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.\n5.  Be aware of resources to help you learn more about markdown options.\n\n::: {.cell}\n\n:::\n\n\n6.  Be able to insert an R code chunk, and show the output in the rendered document.\n\n::: {.cell}\n\n```{.r .cell-code}\n8 + 10 \n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 18\n```\n:::\n\n```{.r .cell-code}\n7 - 3\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 4\n```\n:::\n\n```{.r .cell-code}\n30 / 10\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 3\n```\n:::\n\n```{.r .cell-code}\n6 * 10\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 60\n```\n:::\n:::\n\n-   macro for quick insert\n\n7.  Running R code chunks in a qmd\nYES\n-   pressing play\nYES\n-   copy/paste into console\nYES\n-   highlight then command-enter (mac)\nYES\n-   precedence issues (first to last)\nYES\n\n8.  Be aware of R code chunk options, and how to use eval, messages, error, warning, and echo.\nYES\n\n9.  Be able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)\nYES\n\n10. Write inline r code.\n\n\n11. Explain how the rendering environment is different from the Rstudio environment.\n Rendering environment turns your work into a post meanwhile in the  rstudio environment, every table and data set you create on the    visual tab and kept and stored in this particular environment. \n\n12. Be aware of more advanced quarto options for html documents, and try some of the options.\n ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

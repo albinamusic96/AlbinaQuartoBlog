@@ -12,24 +12,51 @@ YES
 YES
 
 3.  Explain the difference between the source editor view and visual editor view in Rstudio.
+```{r}
 
-
+```
 
 4.  Be able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.
 5.  Be aware of resources to help you learn more about markdown options.
-6.  Be able to insert an R code chunk, and show the output in the rendered document.
+```{r}
 
+```
+
+6.  Be able to insert an R code chunk, and show the output in the rendered document.
+```{r}
+8 + 10 
+
+7 - 3
+
+30 / 10
+
+6 * 10
+
+```
 -   macro for quick insert
 
 7.  Running R code chunks in a qmd
-
+YES
 -   pressing play
+YES
 -   copy/paste into console
+YES
 -   highlight then command-enter (mac)
+YES
 -   precedence issues (first to last)
+YES
 
 8.  Be aware of R code chunk options, and how to use eval, messages, error, warning, and echo.
+YES
+
 9.  Be able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)
+YES
+
 10. Write inline r code.
+
+
 11. Explain how the rendering environment is different from the Rstudio environment.
+ Rendering environment turns your work into a post meanwhile in the  rstudio environment, every table and data set you create on the    visual tab and kept and stored in this particular environment. 
+
 12. Be aware of more advanced quarto options for html documents, and try some of the options.
+ 

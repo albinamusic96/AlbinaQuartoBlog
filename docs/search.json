@@ -18,7 +18,7 @@
     "href": "posts/week_3/index.html",
     "title": "Week 3",
     "section": "",
-    "text": "Be able to make a new .qmd document YES\nBe able to render a .qmd document YES\nExplain the difference between the source editor view and visual editor view in Rstudio.\nBe able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.\nBe aware of resources to help you learn more about markdown options.\nBe able to insert an R code chunk, and show the output in the rendered document.\n\n\nmacro for quick insert\n\n\nRunning R code chunks in a qmd\n\n\npressing play\ncopy/paste into console\nhighlight then command-enter (mac)\nprecedence issues (first to last)\n\n\nBe aware of R code chunk options, and how to use eval, messages, error, warning, and echo.\nBe able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)\nWrite inline r code.\nExplain how the rendering environment is different from the Rstudio environment.\nBe aware of more advanced quarto options for html documents, and try some of the options."
+    "text": "Be able to make a new .qmd document YES\nBe able to render a .qmd document YES\nExplain the difference between the source editor view and visual editor view in Rstudio.\n\n\n\n\n\nBe able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.\nBe aware of resources to help you learn more about markdown options.\n\n\n\n\n\nBe able to insert an R code chunk, and show the output in the rendered document.\n\n\n8 + 10 \n\n[1] 18\n\n7 - 3\n\n[1] 4\n\n30 / 10\n\n[1] 3\n\n6 * 10\n\n[1] 60\n\n\n\nmacro for quick insert\n\n\nRunning R code chunks in a qmd YES\n\n\npressing play YES\ncopy/paste into console YES\nhighlight then command-enter (mac) YES\nprecedence issues (first to last) YES\n\n\nBe aware of R code chunk options, and how to use eval, messages, error, warning, and echo. YES\nBe able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.) YES\nWrite inline r code.\nExplain how the rendering environment is different from the Rstudio environment. Rendering environment turns your work into a post meanwhile in the rstudio environment, every table and data set you create on the visual tab and kept and stored in this particular environment.\nBe aware of more advanced quarto options for html documents, and try some of the options."
   },
   {
     "objectID": "posts/logic_loops_functions/index.html",
@@ -137,7 +137,7 @@
     "href": "index.html",
     "title": "AlbinaQuartoBlog",
     "section": "",
-    "text": "Logic, Loops, and Functions\n\n\n\n\n\n\n\n\n\n\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntip sheet\n\n\n\n\n\n\n\ntips\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nAlbina Music\n\n\n\n\n\n\nNo matching items"
+    "text": "Logic, Loops, and Functions\n\n\n\n\n\n\n\n\n\n\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 7\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntip sheet\n\n\n\n\n\n\n\ntips\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nAlbina Music\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -145,5 +145,12 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "posts/week_5/index.html",
+    "href": "posts/week_5/index.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Write a new blog post and submit the link to this assignment on blackboard. Write your blog around the three big themes:\nData types: Show that you understand what is available to you in R. Note also, this goal overlaps with part of the midterm project. See the appendix on Data Types in the textbook for help. Write notes and R code chunks to demonstrate your knowledge\nTidy Data: Show that you understand what this means. Give an example of data this is in tidy format, and data that is not.\nggplot2: We will continue learning about this across the semester. Show at a minimum that you can make a graph and add it to your blog. Try examples from the textbook. Show that you understand the layer concept. Identify aspects that are confusing to you so we can discuss them in class."
   }
 ]
