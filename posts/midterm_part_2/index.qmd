@@ -286,16 +286,6 @@ strsplit(a,split=" ") # use a space as the splitting character
 #> [1] "this"     "is"       "a"        "sentence"
 ```
 
-## count the number of sentences in a string variable
-```{r}
-text <- "This is a sentence. This is another sentence. And this is a third sentence!"
-
-num_sentences <- str_count(text, "[[:punct:]]\\s+(?=[[:upper:]])")
-
-print(num_sentences)
-
-```
-
 ## count the number of times a specific character occurs in a string variable
 ```{r}
 # using the table function
