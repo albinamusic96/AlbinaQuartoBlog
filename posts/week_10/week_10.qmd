@@ -1,0 +1,16 @@
+---
+title: "Data Tidying"
+author: "Albina Music"
+date: "2023-02-18"
+categories: [qmd notes]
+---
+
+```{r}
+library(tidyverse) # for data wrangling
+```
+
+```{r}
+
+untidy_data <- read_csv("data/untidy_data.csv", show_col_types = FALSE)
+
+```

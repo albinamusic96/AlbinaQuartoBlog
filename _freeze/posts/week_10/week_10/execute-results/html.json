@@ -1,0 +1,14 @@
+{
+  "hash": "c47fa4dfbacf3a3201f356c0c6219abe",
+  "result": {
+    "markdown": "---\ntitle: \"Data Tidying\"\nauthor: \"Albina Music\"\ndate: \"2023-02-18\"\ncategories: [qmd notes]\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse) # for data wrangling\n```\n\n::: {.cell-output .cell-output-stderr}\n```\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.0     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.1.8\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n```\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nuntidy_data <- read_csv(\"data/untidy_data.csv\", show_col_types = FALSE)\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
