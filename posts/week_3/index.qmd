@@ -5,58 +5,152 @@ date: "2023-02-18"
 categories: [qmd notes]
 ---
 
+# make new qmds
 1.  Be able to make a new .qmd document
-YES
+Yes, I can do this.
+
+ - use the top-right green plus icon
+ - from the file menu
+ - from the file tab choose green plus icon.
+________________________________________________________________________________________
+# render qmds
 
 2.  Be able to render a .qmd document
-YES
-
-3.  Explain the difference between the source editor view and visual editor view in Rstudio.
 ```{r}
-
+# press the render button
 ```
 
-4.  Be able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.
-5.  Be aware of resources to help you learn more about markdown options.
+Explain the difference between the source editor view and visual editor view in Rstudio.
 ```{r}
+# Source shows plain text. Visual editor shows rendered markdown text.
+```
+________________________________________________________________________________________
 
+# Simple markdown {.unnumbered .unlisted}
+
+3.  Be able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.
+```{r}
+# my name is Albina.
 ```
 
-6.  Be able to insert an R code chunk, and show the output in the rendered document.
-```{r}
-8 + 10 
+________________________________________________________________________________________
 
-7 - 3
+# Markdown resources
 
-30 / 10
+## a second level
 
-6 * 10
+4.  Be aware of resources to help you learn more about markdown options.
 
+*italics* & **bold**
+
+superscript^2^ / subscript~2~
+
+Test^10^
+
+Test~2302403~
+
+~~strikethrough~~
+
+~~asdf ads fdsaf das fas fsad fa sdfa ds~~
+
+`verbatim code`
+
+Let's say I'm writing about the `ggplot2` library.
+
+<https://quarto.org>
+
+[Quarto](https://quarto.org)
+
+![This is an elephant](images/elephant.png)
+
+-   unordered list
+    -   sub-item 1
+    -   sub-item 2
+        -   sub-sub-item 1
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+
+``` bash
+Put our code in here
 ```
+
+``` python
+1 + 1
+```
+
+``` default
+a <- 1
+b <- 3
+# some comments
+```
+
+$x=1$
+
+$E = mc^{2}$
+________________________________________________________________________________________
+
+5.  Be able to insert an R code chunk, and show the output in the rendered document.
+
 -   macro for quick insert
+```{r}
+2+2
 
-7.  Running R code chunks in a qmd
-YES
+```
+
+mac - "option-command-i" windows - Ctrl-Alt-I
+
+6.  Running R code chunks in a qmd
+
 -   pressing play
-YES
 -   copy/paste into console
-YES
 -   highlight then command-enter (mac)
-YES
 -   precedence issues (first to last)
-YES
 
-8.  Be aware of R code chunk options, and how to use eval, messages, error, warning, and echo.
-YES
+7.  Be aware of R code chunk options, and how to use eval, messages, error, warning, and echo.
+```{r}
+#| eval: true
+#| echo: true
+#| error: true
 
-9.  Be able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)
-YES
+hist(mtcars$mpg)
 
-10. Write inline r code.
+"b" + 5 
 
+```
 
-11. Explain how the rendering environment is different from the Rstudio environment.
- Rendering environment turns your work into a post meanwhile in the  rstudio environment, every table and data set you create on the    visual tab and kept and stored in this particular environment. 
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+```
 
-12. Be aware of more advanced quarto options for html documents, and try some of the options.
- 
+```{r}
+#| out-width: "25%"
+hist(mtcars$mpg)
+```
+
+8.  Be able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)
+```{r}
+# Yes. Use execute in top-level yml, chunk options have precedence over global options.
+```
+
+9.  Write inline r code.
+
+`r  1+1`
+
+```{r}
+a <- 54
+b <- 100
+
+c <- a+b
+```
+
+10. Explain how the rendering environment is different from the Rstudio environment.
+```{r}
+c <- a+b
+c
+```
