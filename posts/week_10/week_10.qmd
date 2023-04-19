@@ -4,21 +4,17 @@ author: "Albina Music"
 date: "2023-02-18"
 categories: [qmd notes]
 ---
-
-```{r}
-library(tidyverse) # for data wrangling
-```
-
 ## look at the untidy data
+
 ```{r}
 untidy_data <- read_csv("data/untidy_data.csv", show_col_types = FALSE)
 ```
 
 ## look at the tidy data
+
 ```{r}
 tidy_data <- read_csv("data/tidy_data.csv", show_col_types = FALSE)
 ```
-
 
 ```{r}
 tidy_data %>%
@@ -30,6 +26,7 @@ tidy_data %>%
 ```
 
 ## one observation per row
+
 ```{r}
 longer_data <- pivot_longer(
   data = untidy_data, 
@@ -44,6 +41,7 @@ longer_data <- pivot_longer(
 ```
 
 ## one variable per column
+
 ```{r}
 wider_data <- pivot_wider(
   data = longer_data,
@@ -52,11 +50,3 @@ wider_data <- pivot_wider(
   values_from = value
 )
 ```
-
-
-
-
-
-
-
-
