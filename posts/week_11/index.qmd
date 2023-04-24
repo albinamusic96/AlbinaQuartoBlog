@@ -1,14 +1,58 @@
 ---
-title: "Week 4"
+title: "Week 11"
 author: "Albina Music"
-date: "2023-02-18"
+date: "2023-04-24"
 categories: [qmd notes]
 ---
+```{r}
+library(tidyverse)
+```
 
-Write a new blog post and submit the link to this assignment on blackboard. Write your blog around the three big themes:
+```{r}
+budget <- read_csv("data/budget.csv", show_col_types = FALSE)
+```
 
-Data types: Show that you understand what is available to you in R. Note also, this goal overlaps with part of the midterm project. See the appendix on Data Types in the textbook for help. Write notes and R code chunks to demonstrate your knowledge
+```{r}
+# select single column by name
+product_dat <- budget %>% select(product) 
 
-Tidy Data: Show that you understand what this means. Give an example of data this is in tidy format, and data that is not.
+# select single column by number
+product_dat <- budget %>% select(2) 
+```
 
-ggplot2: We will continue learning about this across the semester. Show at a minimum that you can make a graph and add it to your blog. Try examples from the textbook. Show that you understand the layer concept. Identify aspects that are confusing to you so we can discuss them in class.
+```{r}
+# select columns individually
+sales2019 <- budget %>% select(region, product, sales_2019)
+
+# select columns with colon
+sales2019 <- budget %>% select(region:sales_2019)
+```
+
+```{r}
+regions <- budget %>% select(`Sales Region` = 1, 3:6)
+
+head(regions, 2)
+```
+
+```{r}
+# de-select individual columns
+sales <- budget %>% select(-expenses_2019, -expenses_2020)
+
+# de-select a range of columns
+sales <- budget %>% select(-(expenses_2019:expenses_2020))
+```
+
+```{r}
+# select all rows where region equals North
+budget %>% filter(region == "North")
+
+# select all rows where expenses_2020 were exactly equal to 200
+budget %>% filter(expenses_2020 == 200)
+
+# select all rows where sales_2019 was more than 100
+budget %>% filter(sales_2019 > 100)
+
+# everything but the North
+budget %>% filter(region != "North")
+```
+
