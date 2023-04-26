@@ -1,6 +1,0 @@
----
-title: "Week 6"
-author: "Albina Music"
-date: "2023-02-18"
-categories: [qmd notes]
----
