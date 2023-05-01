@@ -1,0 +1,141 @@
+---
+title: "Week 12"
+author: "Albina Music"
+date: "2023-02-18"
+categories: [final project example]
+execute: 
+  eval: false
+---
+```{r}
+library(tidyverse)   # data wrangling functions
+library(ggthemes)    # for themes
+library(patchwork)   # for combining plots
+library(plotly)      # for interactive plots
+# devtools::install_github("hrbrmstr/waffle")
+library(waffle)      # for waffle plots
+library(ggbump)      # for bump plots
+library(treemap)     # for treemap plots
+library(ggwordcloud) # for word clouds
+library(tidytext)    # for manipulating text for word clouds
+library(sf)          # for mapping geoms
+library(rnaturalearth) # for map data
+library(rnaturalearthdata) # extra mapping data
+library(gganimate)   # for animated plots
+
+theme_set(theme_light())
+```
+
+```{r}
+# update column specification
+ct <- cols(issue_category = col_factor(levels = c("tech", "returns", "sales", "other")))
+
+# load data
+survey_data <- read_csv(file = "data/survey_data.csv",
+                        col_types = ct)
+```
+
+```{r}
+# create bar plot
+bar <- ggplot(data = survey_data, 
+              mapping = aes(x = issue_category,
+                            fill = issue_category)) +
+  geom_bar(show.legend = FALSE) +
+  labs(x = "Issue Category", 
+       y = "Count",
+       title = "Calls by Issue Category")
+```
+
+```{r}
+#create scatterplot
+point <- ggplot(data = survey_data, 
+                mapping = aes(x = wait_time, 
+                              y = call_time,
+                              color = issue_category)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = lm, formula = y~x) +
+  labs(x = "Wait Time",
+       y = "Call Time",
+       color = "Issue Category",
+       title = "Wait Time by Call Time")
+```
+
+```{r}
+bar + point
+```
+
+## annotations
+```{r}
+bar +
+  # add left-justified text to the second bar
+  annotate(geom = "text",
+           label = "Our goal is to\nreduce this\ncategory",
+           x = 1.65, y = 150,
+           hjust = 0, vjust = 1, 
+           color = "white", fontface = "bold",
+           angle = 45) +
+  # add a centred label to the third bar
+  annotate(geom = "label",
+           label = "Our goal is\nto increase this\ncategory",
+           x = 3, y = 75,
+           hjust = 0.5, vjust = 1, 
+           color = " darkturquoise", fontface = "bold")
+```
+
+```{r}
+point +
+  # add a rectangle surrounding long call times
+  annotate(geom = "rect",
+           xmin = 100, xmax = 275,
+           ymin = 140, ymax = 180,
+           fill = "transparent", color = "red") +
+  # add a text label
+  annotate("text",
+           x = 260, y = 120,
+           label = "outliers") +
+  # add an line with an arrow from the text to the box
+  annotate(geom = "segment", 
+           x = 240, y = 120, 
+           xend = 200, yend = 135,
+           arrow = arrow(length = unit(0.5, "lines"))) +
+  # add a curved line with an arrow 
+  # from the text to a wait time outlier
+  annotate(geom = "curve", 
+          x = 280, y = 120, 
+          xend = 320, yend = 45,
+          curvature = -0.5,
+          arrow = arrow(length = unit(0.5, "lines")))
+```
+
+## other plots
+```{r}
+survey_data <- read_csv(file = "data/survey_data.csv",
+                        show_col_types = FALSE)
+
+ggplot(survey_data, aes(x = wait_time)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(survey_data, aes(x = wait_time)) +
+  scale_x_continuous(name = "Wait time (seconds)",
+                     breaks = seq(0, 600, 60)) +
+  geom_freqpoly(boundary = 0, binwidth = 15, 
+                color = "black")
+```
+
+```{r}
+ggplot(survey_data, aes(x = wait_time)) +
+  scale_x_continuous(name = "Wait time (seconds)",
+                     breaks = seq(0, 600, 60)) +
+  geom_density(fill = "purple", color = "black")
+```
+
+## interactive plots
+```{r}
+ggplotly(point)
+```
+
+```{r}
+devtools::install_github("hrbrmstr/waffle")
+```
+

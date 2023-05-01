@@ -6,34 +6,36 @@ categories: [qmd notes]
 ---
 
 # make new qmds
-1.  Be able to make a new .qmd document
-Yes, I can do this.
 
- - use the top-right green plus icon
- - from the file menu
- - from the file tab choose green plus icon.
-________________________________________________________________________________________
-# render qmds
+1.  Be able to make a new .qmd document Yes, I can do this.
+
+-   use the top-right green plus icon
+-   from the file menu
+-   from the file tab choose green plus icon.
 
 2.  Be able to render a .qmd document
+
 ```{r}
 # press the render button
 ```
 
 Explain the difference between the source editor view and visual editor view in Rstudio.
+
 ```{r}
 # Source shows plain text. Visual editor shows rendered markdown text.
 ```
-________________________________________________________________________________________
+
+---------------------------------------------------------
 
 # Simple markdown {.unnumbered .unlisted}
 
 3.  Be able to insert simple markdown plain text (headers, lists, paragraphs), and render the document.
+
 ```{r}
 # my name is Albina.
 ```
 
-________________________________________________________________________________________
+---------------------------------------------------------
 
 # Markdown resources
 
@@ -90,12 +92,12 @@ b <- 3
 
 $x=1$
 
-$E = mc^{2}$
-________________________________________________________________________________________
+$E = mc^{2}$ 
 
 5.  Be able to insert an R code chunk, and show the output in the rendered document.
 
 -   macro for quick insert
+
 ```{r}
 2+2
 
@@ -111,6 +113,7 @@ mac - "option-command-i" windows - Ctrl-Alt-I
 -   precedence issues (first to last)
 
 7.  Be aware of R code chunk options, and how to use eval, messages, error, warning, and echo.
+
 ```{r}
 #| eval: true
 #| echo: true
@@ -118,22 +121,18 @@ mac - "option-command-i" windows - Ctrl-Alt-I
 
 hist(mtcars$mpg)
 
-"b" + 5 
-
 ```
 
 ```{r}
-#| message: false
-#| warning: false
 library(dplyr)
 ```
 
 ```{r}
-#| out-width: "25%"
 hist(mtcars$mpg)
 ```
 
 8.  Be able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)
+
 ```{r}
 # Yes. Use execute in top-level yml, chunk options have precedence over global options.
 ```
@@ -150,6 +149,7 @@ c <- a+b
 ```
 
 10. Explain how the rendering environment is different from the Rstudio environment.
+
 ```{r}
 c <- a+b
 c

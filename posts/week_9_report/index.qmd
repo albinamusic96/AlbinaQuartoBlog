@@ -10,10 +10,11 @@ categories: [report]
 library(tidyverse)
 
 #load the data
-review_data <- rio::import("review_data")
+review_data <- rio::import("data_report/review_data.csv")
 ```
 
 ## number of reviews by year
+
 ```{r, echo= FALSE}
 #Get number of reviews per year
 reviews_by_year <- review_data %>%
@@ -38,6 +39,7 @@ ggplot(data = reviews_by_year, mapping = aes(x=year, y=counts))+
 ```
 
 ## verified users(the dataset contains details of whether the review was based on a verified purchase, from [Amazon Community](https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=G75XTB7MBMBTXP6W))
+
 ```{r, echo= FALSE}
 #| label: tbl-verified
 #| tbl-cap: Number of reviews by purchase status
@@ -54,6 +56,7 @@ knitr::kable(verified_reviews)
 ```
 
 ## number of reviews per year
+
 ```{r, echo= FALSE}
 #Get number of reviews per year
 
@@ -87,6 +90,7 @@ ggplot(data = year_by_verified_counts,
 ```
 
 ## number of reviews per rating
+
 ```{r, echo= FALSE}
 #Get number of reviews per each rating
 options(scipen = 999)
@@ -115,6 +119,7 @@ ggplot(data = reviews_by_rating, mapping = aes(x=rating, y=counts))+
 ```
 
 ## number of reviews per year
+
 ```{r}
 #Get number of reviews per year
 
@@ -144,4 +149,3 @@ ggplot(data = rating_by_verified_counts,
     panel.grid.minor=element_line(colour="lightgrey"))
 
 ```
-
