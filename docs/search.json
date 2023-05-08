@@ -1,5 +1,215 @@
 [
   {
+    "objectID": "posts/week_12_tidy_tues_2/index.html",
+    "href": "posts/week_12_tidy_tues_2/index.html",
+    "title": "Tidy Tuesday 2",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n\nlibrary(tidytuesdayR)\n\ntuesdata <- tidytuesdayR::tt_load('2023-02-21')\n\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\nError in github_sha(\"static\"): Response Code 403: API rate limit exceeded for 146.245.244.218. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\n\ntuesdata <- tidytuesdayR::tt_load(2023, week = 8)\n\nOnly -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.\n\n\nError in github_sha(\"static\"): Response Code 403: API rate limit exceeded for 146.245.244.218. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\n\nbob_ross <- tuesdata$bob_ross\n\nError in eval(expr, envir, enclos): object 'tuesdata' not found"
+  },
+  {
+    "objectID": "posts/week_12_tidy_tues_2/index.html#how-many-colors-were-used-in-the-paintings",
+    "href": "posts/week_12_tidy_tues_2/index.html#how-many-colors-were-used-in-the-paintings",
+    "title": "Tidy Tuesday 2",
+    "section": "how many colors were used in the paintings",
+    "text": "how many colors were used in the paintings\n\nbob_ross_longer <- bob_ross %>%\n  pivot_longer(10:27) %>%\n  group_by(name) %>%\n  summarize(count = sum(value))\n\nError in pivot_longer(., 10:27): object 'bob_ross' not found"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/midterm_part_1/index.html#write-a-blog-post-where-you-demonstrate-your-ability-to-use-these-basic-programming-concepts-in-r.",
+    "href": "posts/midterm_part_1/index.html#write-a-blog-post-where-you-demonstrate-your-ability-to-use-these-basic-programming-concepts-in-r.",
+    "title": "Midterm Part 1",
+    "section": "Write a blog post where you demonstrate your ability to use these basic programming concepts in R.",
+    "text": "Write a blog post where you demonstrate your ability to use these basic programming concepts in R.\n\nR objects: show that you understand and can create/use objects of various types, including at least: character/string, numeric, integer, logical, data.frame, and list. Show that you can index objects appropriately (e.g., locate elements of an object, change elements of an object etc.)\n\n\n## Character/String\nstring1 <- \"Hello\"\nstring2 <- \"world\"\nresult1 <- paste(string1, string2)\nprint(result1) \n\n[1] \"Hello world\"\n\nstring3 <- \"Goodbye\"\nstring4 <- \"world\"\nresult2 <- paste0(string3, string4)\nprint(result2) \n\n[1] \"Goodbyeworld\"\n\n## Numeric\nmy_num <- 5.2\n\nmy_num + 3 \n\n[1] 8.2\n\nmy_nums <- c(1, 2, 3, 4, 5)\n\nmy_nums[3]\n\n[1] 3\n\n## Integer\nmy_int <- 5L\n\nmy_int + 3L \n\n[1] 8\n\nmy_ints <- c(1L, 2L, 3L, 4L, 5L)\n\nmy_ints[3]\n\n[1] 3\n\n## Logical\nmy_bool <- TRUE\n\nmy_bool & FALSE \n\n[1] FALSE\n\nmy_logicals <- c(TRUE, FALSE, TRUE, TRUE, FALSE)\n\nmy_logicals[3]\n\n[1] TRUE\n\n## Data Frame\nmy_df <- data.frame(name = c(\"John\", \"Mary\", \"Bob\"), age = c(25, 30, 35), married = c(TRUE, TRUE, FALSE))\n\nmy_df$name\n\n[1] \"John\" \"Mary\" \"Bob\" \n\nmy_df[2, 3] \n\n[1] TRUE\n\n## List\nmy_list <- list(name = \"Albina\", age = 28, married = TRUE, hobbies = c(\"reading\", \"traveling\", \"cooking\"))\n\nmy_list[[1]] \n\n[1] \"Albina\"\n\nmy_list[[4]][2] \n\n[1] \"traveling\"\n\n\n\nLogical operations: show that you understand and can use logical operators in R (e.g., == | > < >= <=)\n\n\n## == (equal to)\nx <- 5\ny <- 7\n\nx == y \n\n[1] FALSE\n\n## >< (greater than)\nx <- 5\ny <- 7\n\nx > y\n\n[1] FALSE\n\n## >< (less than)\nx <- 5\ny <- 7\n\nx < y \n\n[1] TRUE\n\n## ><|= (greater than or equal to)\nx <- 5\ny <- 7\n\nx >= y \n\n[1] FALSE\n\n## ><|= (less than or equal to)\nx <- 5\ny <- 7\n\nx <= y \n\n[1] TRUE\n\n## &(and)\nx <- TRUE\ny <- FALSE\n\nx & y \n\n[1] FALSE\n\n## | (or)\nx <- TRUE\ny <- FALSE\n\nx | y \n\n[1] TRUE\n\n\n\nLoops: Show that you understand the components of a for loop, and that you can use a for loop.\n\n\n## Basic Loops\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  print(num)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n## Nested Loops\nmy_nums1 <- c(1, 2, 3)\nmy_nums2 <- c(4, 5, 6)\n\nfor (num1 in my_nums1) {\n  for (num2 in my_nums2) {\n    print(num1 + num2)\n  }\n}\n\n[1] 5\n[1] 6\n[1] 7\n[1] 6\n[1] 7\n[1] 8\n[1] 7\n[1] 8\n[1] 9\n\n## \"if\" loop\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  if (num %% 2 == 0) {\n    print(num)\n  }\n}\n\n[1] 2\n[1] 4\n\n## \"break\" loop\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  if (num == 3) {\n    break\n  }\n  print(num)\n}\n\n[1] 1\n[1] 2\n\n## \"continue\" loop\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  if (num %% 2 == 1) {\n    next\n  }\n  print(num)\n}\n\n[1] 2\n[1] 4\n\n\n\nFunctions: Show that you understand the syntax for declaring your own function, and that you can declare and run your own custom function to accomplish some task (you choose what the function does).\n\n\n## example 1\nmy_function <- function(x, y) {\n  z <- x + y\n  return(z)\n}\n\nresult <- my_function(3, 5)\nprint(result) \n\n[1] 8\n\n## example 2\nsum_of_squares <- function(v) {\n  sum <- 0\n\n  for (i in v) {\n    if (i %% 2 == 0) {\n      sum <- sum + i^2\n    }\n  }\n  \n  return(sum)\n}"
+  },
+  {
+    "objectID": "posts/week_5/index.html",
+    "href": "posts/week_5/index.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "library(tidyverse)     # includes readr & tibble\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n\nlibrary(rio)           # for almost any data import/export\nlibrary(haven)         # for SPSS, Stata,and SAS files\nlibrary(readxl)        # for Excel files\nlibrary(googlesheets4) # for Google Sheets"
+  },
+  {
+    "objectID": "posts/week_5/index.html#options-for-viewing-data",
+    "href": "posts/week_5/index.html#options-for-viewing-data",
+    "title": "Week 5",
+    "section": "options for viewing data",
+    "text": "options for viewing data\n\ndata(cars) # make data from R package available in global environment\n#View(cars) # view in editor pane\n#print(cars) # print to console\n#cars # print to console\n\n# show columns as rows\nglimpse(cars)\n\nRows: 50\nColumns: 2\n$ speed <dbl> 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12, 12, 12, 13, 13, 13…\n$ dist  <dbl> 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26, 34…\n\n\n\n#show first 10 lines of table\nhead(cars)\n\n  speed dist\n1     4    2\n2     4   10\n3     7    4\n4     7   22\n5     8   16\n6     9   10\n\n\n\n# print nicely to web\nknitr::kable(head(cars))\n\n\n\n\nspeed\ndist\n\n\n\n\n4\n2\n\n\n4\n10\n\n\n7\n4\n\n\n7\n22\n\n\n8\n16\n\n\n9\n10"
+  },
+  {
+    "objectID": "posts/week_5/index.html#produce-summaries",
+    "href": "posts/week_5/index.html#produce-summaries",
+    "title": "Week 5",
+    "section": "produce summaries",
+    "text": "produce summaries\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
+  },
+  {
+    "objectID": "posts/week_5/index.html#importing-data",
+    "href": "posts/week_5/index.html#importing-data",
+    "title": "Week 5",
+    "section": "importing data",
+    "text": "importing data\n\nlibrary(rio)\n\ndemo_tsv <- import(file = \"data/demo.tsv\")\n\nError in import(file = \"data/demo.tsv\"): No such file\n\nglimpse(demo_tsv)\n\nError in glimpse(demo_tsv): object 'demo_tsv' not found"
+  },
+  {
+    "objectID": "posts/week_4/index.html",
+    "href": "posts/week_4/index.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Write a new blog post and submit the link to this assignment on blackboard. Write your blog around the three big themes:\nData types: Show that you understand what is available to you in R. Note also, this goal overlaps with part of the midterm project. See the appendix on Data Types in the textbook for help. Write notes and R code chunks to demonstrate your knowledge\nTidy Data: Show that you understand what this means. Give an example of data this is in tidy format, and data that is not.\nggplot2: We will continue learning about this across the semester. Show at a minimum that you can make a graph and add it to your blog. Try examples from the textbook. Show that you understand the layer concept. Identify aspects that are confusing to you so we can discuss them in class."
+  },
+  {
+    "objectID": "posts/week_3/index.html",
+    "href": "posts/week_3/index.html",
+    "title": "Week 3",
+    "section": "",
+    "text": "Be able to make a new .qmd document Yes, I can do this.\n\n\nuse the top-right green plus icon\nfrom the file menu\nfrom the file tab choose green plus icon.\n\n\nBe able to render a .qmd document\n\n\n# press the render button\n\nExplain the difference between the source editor view and visual editor view in Rstudio.\n\n# Source shows plain text. Visual editor shows rendered markdown text."
+  },
+  {
+    "objectID": "posts/week_3/index.html#a-second-level",
+    "href": "posts/week_3/index.html#a-second-level",
+    "title": "Week 3",
+    "section": "a second level",
+    "text": "a second level\n\nBe aware of resources to help you learn more about markdown options.\n\nitalics & bold\nsuperscript2 / subscript2\nTest10\nTest2302403\nstrikethrough\nasdf ads fdsaf das fas fsad fa sdfa ds\nverbatim code\nLet’s say I’m writing about the ggplot2 library.\nhttps://quarto.org\nQuarto\n\n\n\nThis is an elephant\n\n\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\nPut our code in here\n1 + 1\na <- 1\nb <- 3\n# some comments\n\\(x=1\\)\n\\(E = mc^{2}\\)\n\nBe able to insert an R code chunk, and show the output in the rendered document.\n\n\nmacro for quick insert\n\n\n2+2\n\n[1] 4\n\n\nmac - “option-command-i” windows - Ctrl-Alt-I\n\nRunning R code chunks in a qmd\n\n\npressing play\ncopy/paste into console\nhighlight then command-enter (mac)\nprecedence issues (first to last)\n\n\nBe aware of R code chunk options, and how to use eval, messages, error, warning, and echo.\n\n\nhist(mtcars$mpg)\n\n\n\n\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\n\nhist(mtcars$mpg)\n\n\n\n\n\nBe able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)\n\n\n# Yes. Use execute in top-level yml, chunk options have precedence over global options.\n\n\nWrite inline r code.\n\n2\n\na <- 54\nb <- 100\n\nc <- a+b\n\n\nExplain how the rendering environment is different from the Rstudio environment.\n\n\nc <- a+b\nc\n\n[1] 154"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html",
+    "href": "posts/logic_loops_functions/index.html",
+    "title": "Logic, Loops, and Functions",
+    "section": "",
+    "text": "Logic statements are used to compare two things, or two sets of things. The output of comparison is a TRUE or FALSE statement. If many things are being compared at once, the output could be many TRUE or FALSE statements for each comparison"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#equal-to",
+    "href": "posts/logic_loops_functions/index.html#equal-to",
+    "title": "Logic, Loops, and Functions",
+    "section": "equal to (==)",
+    "text": "equal to (==)\n\n1 == 1 # is 1 equal to 1?\n\n[1] TRUE\n\n1 == 2 # is 1 equal to 2?\n\n[1] FALSE\n\nc(1, 2, 3) == c(2, 1, 3) # compares each element with each element\n\n[1] FALSE FALSE  TRUE\n\n1 == c(2, 1, 3)\n\n[1] FALSE  TRUE FALSE"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#not-equal-to",
+    "href": "posts/logic_loops_functions/index.html#not-equal-to",
+    "title": "Logic, Loops, and Functions",
+    "section": "not equal to (!=)",
+    "text": "not equal to (!=)\n\n1 != 1 # is 1 equal to 1?\n\n[1] FALSE\n\n1 != 2 # is 1 equal to 2?\n\n[1] TRUE\n\nc(1, 2, 3) != c(2, 1, 3) # compares each element with each element\n\n[1]  TRUE  TRUE FALSE\n\n1 != c(2, 1, 3)\n\n[1]  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#greater-than-less-than",
+    "href": "posts/logic_loops_functions/index.html#greater-than-less-than",
+    "title": "Logic, Loops, and Functions",
+    "section": "greater than/ less than",
+    "text": "greater than/ less than\n\n1 > 1 # is 1 greater than 1?\n\n[1] FALSE\n\n5 > 1 # is 5 greater than 1?\n\n[1] TRUE\n\n3 < 2 # is 3 less than 2?\n\n[1] FALSE\n\n3 < 1 # is 3 less than 1?\n\n[1] FALSE\n\nc(1, 2, 3) > c(2, 1, 3) # ask the question element by element\n\n[1] FALSE  TRUE FALSE\n\nc(1, 2, 3) < c(2, 1, 3)\n\n[1]  TRUE FALSE FALSE\n\n2 > c(1, 2, 3) # is greater than each of the numbers\n\n[1]  TRUE FALSE FALSE"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#is-something-greater-than-or-equal-to-something-else",
+    "href": "posts/logic_loops_functions/index.html#is-something-greater-than-or-equal-to-something-else",
+    "title": "Logic, Loops, and Functions",
+    "section": "is something greater than or equal to something else (>= <=)",
+    "text": "is something greater than or equal to something else (>= <=)\n\n1 >= 1 # is 1 greater than 1?\n\n[1] TRUE\n\n5 >= 1 # is 5 greater than 1?\n\n[1] TRUE\n\n3 <= 2 # is 3 less than 2?\n\n[1] FALSE\n\n3 <= 1 # is 3 less than 1?\n\n[1] FALSE\n\nc(1, 2, 3) >= c(2, 1, 3) # ask the question element by element\n\n[1] FALSE  TRUE  TRUE\n\nc(1, 2, 3) <= c(2, 1, 3)\n\n[1]  TRUE FALSE  TRUE\n\n2 >= c(1, 2, 3) # is greater than each of the numbers\n\n[1]  TRUE  TRUE FALSE"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#andthe-ampersand-is-used-for-and-which-allows-use-to-evaluate-whether-two-or-more-properties-are-all-true.",
+    "href": "posts/logic_loops_functions/index.html#andthe-ampersand-is-used-for-and-which-allows-use-to-evaluate-whether-two-or-more-properties-are-all-true.",
+    "title": "Logic, Loops, and Functions",
+    "section": "AND(the ampersand (&) is used for “AND”, which allows use to evaluate whether two or more properties are all TRUE).",
+    "text": "AND(the ampersand (&) is used for “AND”, which allows use to evaluate whether two or more properties are all TRUE).\n\n# is 16 divisible by 4 AND 8\n16 %% 4 == 0 & 16 %% 8 == 0\n\n[1] TRUE\n\n# is 16 divisible by 4 AND 3\n16 %% 4 == 0 & 16 %% 3 == 0\n\n[1] FALSE\n\n# is 16 divisible by 8 and 4 and 2\n16 %% 4 == 0 & 16 %% 8 == 0 & 16 %% 2 == 0\n\n[1] TRUE\n\n16 %% 4 == 0\n\n[1] TRUE\n\n16 %% 8 == 0\n\n[1] TRUE\n\n16 %% 2 == 0\n\n[1] TRUE\n\n16 %% 1 == 0\n\n[1] TRUE"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#orthe-is-used-for-or-which-allows-use-to-evaluate-at-least-one-of-the-properties-is-true.",
+    "href": "posts/logic_loops_functions/index.html#orthe-is-used-for-or-which-allows-use-to-evaluate-at-least-one-of-the-properties-is-true.",
+    "title": "Logic, Loops, and Functions",
+    "section": "OR(the (|) is used for OR, which allows use to evaluate at least one of the properties is TRUE).",
+    "text": "OR(the (|) is used for OR, which allows use to evaluate at least one of the properties is TRUE).\n\n# is 16 divisible by 4 OR 8\n16 %% 4 == 0 | 16 %% 8 == 0\n\n[1] TRUE\n\n# is 16 divisible by 4 OR 3\n16 %% 4 == 0 | 16 %% 3 == 0\n\n[1] TRUE\n\nTRUE | FALSE\n\n[1] TRUE\n\nFALSE | TRUE\n\n[1] TRUE"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#true-falsewhen-r-returns-values-as-true-or-false-it-returns-a-logical-variable.-it-also-treats-true-as-a-1-and-false-as-a-0.",
+    "href": "posts/logic_loops_functions/index.html#true-falsewhen-r-returns-values-as-true-or-false-it-returns-a-logical-variable.-it-also-treats-true-as-a-1-and-false-as-a-0.",
+    "title": "Logic, Loops, and Functions",
+    "section": "TRUE FALSE(when R returns values as TRUE or FALSE, it returns a logical variable. It also treats TRUE as a 1, and FALSE as a 0).",
+    "text": "TRUE FALSE(when R returns values as TRUE or FALSE, it returns a logical variable. It also treats TRUE as a 1, and FALSE as a 0).\n\nc(1, 2, 3) == c(1, 2, 3)\n\n[1] TRUE TRUE TRUE\n\nsum(c(1, 2, 3) == c(1, 2, 3))\n\n[1] 3\n\nc(1, 2, 3) == c(2, 1, 3)\n\n[1] FALSE FALSE  TRUE\n\nsum(c(1, 2, 3) == c(2, 1, 3))\n\n[1] 1"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#if-elsea-roller-coaster-operator-checks-if-people-are-taller-than-a-line-to-see-if-they-can-ride-the-coaster.-this-is-an-if-else-control-structure.-if-the-person-is-taller-than-the-line-then-they-can-go-on-the-ride-else-otherwise-the-person-can-not-go-on-the-ride.-in-other-words-if-the-situation-is-x-then-do-something-else-if-the-situation-is-not-x-then-do-something-different.-if-and-else-statements-let-us-specify-the-conditions-when-specific-actions-are-taken.-generally-if-and-else-statements-are-used-inside-loops-for-or-while-or-repeat-loops-because-at-each-step-or-iteration-of-the-loop-we-want-to-check-something-and-then-do-something.",
+    "href": "posts/logic_loops_functions/index.html#if-elsea-roller-coaster-operator-checks-if-people-are-taller-than-a-line-to-see-if-they-can-ride-the-coaster.-this-is-an-if-else-control-structure.-if-the-person-is-taller-than-the-line-then-they-can-go-on-the-ride-else-otherwise-the-person-can-not-go-on-the-ride.-in-other-words-if-the-situation-is-x-then-do-something-else-if-the-situation-is-not-x-then-do-something-different.-if-and-else-statements-let-us-specify-the-conditions-when-specific-actions-are-taken.-generally-if-and-else-statements-are-used-inside-loops-for-or-while-or-repeat-loops-because-at-each-step-or-iteration-of-the-loop-we-want-to-check-something-and-then-do-something.",
+    "title": "Logic, Loops, and Functions",
+    "section": "IF ELSE(a roller-coaster operator checks if people are taller than a line to see if they can ride the coaster. This is an IF ELSE control structure. IF the person is taller than the line, then they can go on the ride; ELSE (otherwise) the person can not go on the ride. In other words, IF the situation is X, then do something; ELSE (if the situation is not X), then do something different. IF and ELSE statements let us specify the conditions when specific actions are taken. Generally, IF and ELSE statements are used inside loops (for, or while, or repeat loops), because at each step or iteration of the loop, we want to check something, and then do something).",
+    "text": "IF ELSE(a roller-coaster operator checks if people are taller than a line to see if they can ride the coaster. This is an IF ELSE control structure. IF the person is taller than the line, then they can go on the ride; ELSE (otherwise) the person can not go on the ride. In other words, IF the situation is X, then do something; ELSE (if the situation is not X), then do something different. IF and ELSE statements let us specify the conditions when specific actions are taken. Generally, IF and ELSE statements are used inside loops (for, or while, or repeat loops), because at each step or iteration of the loop, we want to check something, and then do something).\n\na <- 1 # define a to be a 1\n\nif (a == 1) {\n  print(a) # this is what happens if a==1\n} else {\n  print(\"A is not 1\") # this is what happens if a is not 1\n}\n\n[1] 1\n\na <- 2 # define a to be a 1\nif (a == 1) {\n  print(a) # this is what happens if a==1\n} else {\n  print(rbinom(10,1,.5)) # this is what happens if a is not 1\n  1+1\n  print(\"hello world\")\n  rbinom(10,1,.5)\n}\n\n [1] 0 0 0 1 0 1 0 1 0 0\n[1] \"hello world\"\n\n\n [1] 1 1 1 0 1 1 0 1 1 0\n\na <- 3.5\n\nif(a >= 4){\n  print(\"get to go on the cyclone\")\n}\n\nif(a < 4){\n  print(\"sorry\")\n}\n\n[1] \"sorry\"\n\na <- c(1, 0, 1, 0, 0, 0, 1) # make a variable contain 1s and 0s\n# write a loop to check each element in the variable\n# and do different things depending on the element\n\nfor (i in a) {\n  \n  if (i == 1) {\n    print(\"I'm a 1\") # what to do when i is 1\n  } else {\n    print(\"I'm not a 1\") # what to do when i is not 1\n  }\n  \n}\n\n[1] \"I'm a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm a 1\"\n\na <- c(1, 2, 3, 1, 2, 0, 1) # make a variable contain 1s and 0s\n# write a loop to check each element in the variable\n# and do different things depending on the element\nfor (i in a) {\n  if (i == 1) {\n    print(\"I'm a 1\") # what to do when i is 1\n  } else if (i == 2) {\n    print(\"I'm a 2\") # what to do when i is 2\n  } else if (i == 3) {\n    print(\"I'm a 3\") # what to do when i is 3\n  } else {\n    print(\"I'm not any of the above\") #what to do when none are true\n  }\n}\n\n[1] \"I'm a 1\"\n[1] \"I'm a 2\"\n[1] \"I'm a 3\"\n[1] \"I'm a 1\"\n[1] \"I'm a 2\"\n[1] \"I'm not any of the above\"\n[1] \"I'm a 1\""
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#loopsloop-control-is-defined-in-between-the-parentheses-.-the-name-of-the-iteratori-is-placed-on-the-left-of-incan-be-assigned-any-name-you-want-does-not-need-to-be-declared-in-advance.-during-the-execution-of-the-loop-the-iterator-takes-on-the-values-inside-the-vector-which-is-placed-on-the-right-side-of-in.-specifically-the-following-is-happening.the-loop-will-automatically-stop-once-it-reaches-the-last-item-in-the-vector.-the-loop-can-be-stopped-before-that-using-the-break-command.",
+    "href": "posts/logic_loops_functions/index.html#loopsloop-control-is-defined-in-between-the-parentheses-.-the-name-of-the-iteratori-is-placed-on-the-left-of-incan-be-assigned-any-name-you-want-does-not-need-to-be-declared-in-advance.-during-the-execution-of-the-loop-the-iterator-takes-on-the-values-inside-the-vector-which-is-placed-on-the-right-side-of-in.-specifically-the-following-is-happening.the-loop-will-automatically-stop-once-it-reaches-the-last-item-in-the-vector.-the-loop-can-be-stopped-before-that-using-the-break-command.",
+    "title": "Logic, Loops, and Functions",
+    "section": "loops(loop control is defined in between the parentheses (). The name of the iterator(i) is placed on the left of in(can be assigned any name you want, does not need to be declared in advance). During the execution of the loop, the iterator takes on the values inside the vector which is placed on the right side of in. Specifically, the following is happening.The loop will automatically stop once it reaches the last item in the vector. the loop can be stopped before that using the “break” command).",
+    "text": "loops(loop control is defined in between the parentheses (). The name of the iterator(i) is placed on the left of in(can be assigned any name you want, does not need to be declared in advance). During the execution of the loop, the iterator takes on the values inside the vector which is placed on the right side of in. Specifically, the following is happening.The loop will automatically stop once it reaches the last item in the vector. the loop can be stopped before that using the “break” command).\n\nLoop steps: 1. iterator <- vector[1] 2. iterator <- vector[2] 3. iterator <- vector[3] 4. etc.\n\nfor(i in 1:5) {\n  print(\"hello\")\n}\n\n[1] \"hello\"\n[1] \"hello\"\n[1] \"hello\"\n[1] \"hello\"\n[1] \"hello\"\n\n# show the value of i each step of the loop\nfor(i in 1:5) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n# define the vector to loop over in advance\nx <- 1:5\nfor (i in x) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n# reminder that (i) becomes the next value in the vector\nmy_sequence <- c(1, 5, 2, 3, 4)\nfor (i in my_sequence) {\n  print(i)\n}\n\n[1] 1\n[1] 5\n[1] 2\n[1] 3\n[1] 4\n\n# index vector does not need to be numbers\nmy_things <- c(\"A\", \"B\", \"C\", \"D\")\nfor (i in my_things) {\n  print(i)\n}\n\n[1] \"A\"\n[1] \"B\"\n[1] \"C\"\n[1] \"D\""
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#breaking-a-loopbreak-stops-a-loop-used-with-logical-statements-to-define-the-conditions-necessary-to-cause-the-break.",
+    "href": "posts/logic_loops_functions/index.html#breaking-a-loopbreak-stops-a-loop-used-with-logical-statements-to-define-the-conditions-necessary-to-cause-the-break.",
+    "title": "Logic, Loops, and Functions",
+    "section": "breaking a loop(“break” stops a loop; used with logical statements to define the conditions necessary to cause the break).",
+    "text": "breaking a loop(“break” stops a loop; used with logical statements to define the conditions necessary to cause the break).\n\nfor(i in 1:10) {\n  if (i < 5) {\n    print(i)\n  } else{\n    break\n  }\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#while-loopswhile-loops-run-until-a-logical-condition-is-met.-here-there-is-no-iterator-just-a-logic-statement-that-needs-to-be-met.-this-one-prints-i-while-i-is-less-than-6.-as-soon-as-i-becomes-not-less-than-6-then-the-loop-stops.-critically-inside-the-loop-the-value-of-i-increases-each-iteration.",
+    "href": "posts/logic_loops_functions/index.html#while-loopswhile-loops-run-until-a-logical-condition-is-met.-here-there-is-no-iterator-just-a-logic-statement-that-needs-to-be-met.-this-one-prints-i-while-i-is-less-than-6.-as-soon-as-i-becomes-not-less-than-6-then-the-loop-stops.-critically-inside-the-loop-the-value-of-i-increases-each-iteration.",
+    "title": "Logic, Loops, and Functions",
+    "section": "while loops(while loops run until a logical condition is met. Here there is no iterator, just a logic statement that needs to be met. this one prints (i) while (i) is less than 6. as soon as (i) becomes “not less than 6”, then the loop stops. Critically, inside the loop, the value of (i) increases each iteration).",
+    "text": "while loops(while loops run until a logical condition is met. Here there is no iterator, just a logic statement that needs to be met. this one prints (i) while (i) is less than 6. as soon as (i) becomes “not less than 6”, then the loop stops. Critically, inside the loop, the value of (i) increases each iteration).\n\ni <- 1 # create an variable\nwhile (i < 6) {\n  print(i)\n  i <- i + 1 #add one eachs step of the loop\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#repeat-loopssimilar-to-while-but-lets-do-things-until-a-condition-is-met.",
+    "href": "posts/logic_loops_functions/index.html#repeat-loopssimilar-to-while-but-lets-do-things-until-a-condition-is-met.",
+    "title": "Logic, Loops, and Functions",
+    "section": "repeat loops(similar to while, but let’s do things until a condition is met).",
+    "text": "repeat loops(similar to while, but let’s do things until a condition is met).\n\ni <- 0\nrepeat {\n  i <- i + 1\n  print(i)\n  if (i == 5) {\n    break\n  }\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\ni <- 0\nrepeat {\n    i <- i + 1\n    \n    if (i == 5) {\n      break\n    }\n    \n    print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4"
+  },
+  {
+    "objectID": "posts/logic_loops_functions/index.html#examples",
+    "href": "posts/logic_loops_functions/index.html#examples",
+    "title": "Logic, Loops, and Functions",
+    "section": "examples",
+    "text": "examples\n\nfor(i in 1:5) print(i)\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n# put 1 into the first five positions of x\nx <- c() # create empty vector\nfor (i in 1:5) {\n  x[i] <- 1  # assign 1 to the ith slot in x\n}\nx\n\n[1] 1 1 1 1 1\n\n# put the numbers 1-5 in the first 5 positions of x\nx <- c()\nfor (i in 1:5) {\n  x[i] <- i\n}\nx\n\n[1] 1 2 3 4 5\n\na <- c(1, 4, 3, 5, 7, 6, 8, 2)\nodd <- c()\ncounter <- 0\nfor (i in a) {\n# (i) will the values of a in each position\n  counter <- counter + 1\n  if (i %% 2 != 0) {\n    odd[counter] <- \"odd\"\n  } else {\n    odd[counter] <- \"even\"\n  }\n}\nodd\n\n[1] \"odd\"  \"even\" \"odd\"  \"odd\"  \"odd\"  \"even\" \"even\" \"even\"\n\n# an alternative strategy\na <- c(1, 4, 3, 5, 7, 6, 8, 2)\nodd <- c()\n# 1:length(a) creates a sequence from 1 to length\nfor (i in 1:length(a)) {\n  if (a[i] %% 2 != 0) {\n    odd[i] <- \"odd\"\n  } else {\n    odd[i] <- \"even\"\n  }\n}\nodd\n\n[1] \"odd\"  \"even\" \"odd\"  \"odd\"  \"odd\"  \"even\" \"even\" \"even\"\n\n## nesting loops\nfor(i in 1:5) {\n  for (j in 1:5) {\n    print(c(i, j))\n  }\n}\n\n[1] 1 1\n[1] 1 2\n[1] 1 3\n[1] 1 4\n[1] 1 5\n[1] 2 1\n[1] 2 2\n[1] 2 3\n[1] 2 4\n[1] 2 5\n[1] 3 1\n[1] 3 2\n[1] 3 3\n[1] 3 4\n[1] 3 5\n[1] 4 1\n[1] 4 2\n[1] 4 3\n[1] 4 4\n[1] 4 5\n[1] 5 1\n[1] 5 2\n[1] 5 3\n[1] 5 4\n[1] 5 5\n\n# example of using nested loops to fill the contents\nmy_matrix <- matrix(0, ncol = 5, nrow = 5)\nfor (i in 1:5) {\n  for (j in 1:5) {\n    my_matrix[i, j] <- i * j\n  }\n}\nmy_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    2    3    4    5\n[2,]    2    4    6    8   10\n[3,]    3    6    9   12   15\n[4,]    4    8   12   16   20\n[5,]    5   10   15   20   25\n\n##break exits out of the immediate loop\nsum_of_i_j <- c()\ncounter <- 0\nfor (i in 1:5) {\n  for (j in 1:5) {\n    counter <- counter + 1\n    sum_of_i_j[counter] <- i + j\n    if (i + j > 5) {\n      break\n    }\n  }\n}\nsum_of_i_j\n\n [1] 2 3 4 5 6 3 4 5 6 4 5 6 5 6 6"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/week_12_tidy_tues_1/index.html",
+    "href": "posts/week_12_tidy_tues_1/index.html",
+    "title": "Tidy Tuesday 1",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n\nlibrary(dplyr)\n\ntuesdata <- tidytuesdayR::tt_load('2023-05-02')\n\n--- Compiling #TidyTuesday Information for 2023-05-02 ----\n--- There are 3 files available ---\nOnly 10 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n--- Starting Download ---\n\n\nOnly 10 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n    Downloading file 1 of 3: `plots.csv`\n\n\nOnly 9 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n    Downloading file 2 of 3: `species.csv`\n\n\nOnly 8 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n    Downloading file 3 of 3: `surveys.csv`\n\n\nOnly 7 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n--- Download complete ---\n\nplots <- tuesdata$plots\nspecies <- tuesdata$species\nsurveys <- tuesdata$surveys"
+  },
+  {
+    "objectID": "posts/week_12_tidy_tues_1/index.html#mice-per-year",
+    "href": "posts/week_12_tidy_tues_1/index.html#mice-per-year",
+    "title": "Tidy Tuesday 1",
+    "section": "mice per year",
+    "text": "mice per year\n\nmice_count_by_year<-surveys %>%\n  group_by(year) %>%\n  count()\n\nggplot(mice_count_by_year, aes(x=year, y=n))+\n  geom_line()+\n  geom_point()+\n  ggtitle(\"Mice Count By Year\")+\n  scale_x_continuous(breaks=seq(1980,2020,5))"
+  },
+  {
+    "objectID": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-sex",
+    "href": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-sex",
+    "title": "Tidy Tuesday 1",
+    "section": "mice per year by sex",
+    "text": "mice per year by sex\n\nmice_count_by_year_sex <- surveys %>%\n  group_by(year,sex) %>%\n  count()\nggplot(mice_count_by_year_sex, aes(x= year, y=n, color=sex))+\n  geom_line() +\n  ggtitle(\"Mice count by year and sex\")+\n  scale_x_continuous(breaks=seq(1980,2020,5))"
+  },
+  {
+    "objectID": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-species",
+    "href": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-species",
+    "title": "Tidy Tuesday 1",
+    "section": "mice per year by species",
+    "text": "mice per year by species\n\nmice_count_by_year_species <- surveys %>%\n  group_by(year,species) %>%\n  count()\n\nggplot(mice_count_by_year_species, aes(x=year, \n                                       y=n,\n                                       color=species,\n                                       linetype=species))+\n  geom_line()+\n  ggtitle(\"Mice Count By Year\")+\n  scale_x_continuous(breaks=seq(1980,2020,5))"
+  },
+  {
     "objectID": "posts/week_9_report/index.html",
     "href": "posts/week_9_report/index.html",
     "title": "Week 9 Report",
@@ -231,52 +441,10 @@
     "text": "About this blog"
   },
   {
-    "objectID": "posts/week_11/index.html",
-    "href": "posts/week_11/index.html",
-    "title": "Week 11",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AlbinaQuartoBlog",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.0     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.1.8\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors"
-  },
-  {
-    "objectID": "posts/week_11/index.html#select",
-    "href": "posts/week_11/index.html#select",
-    "title": "Week 11",
-    "section": "select",
-    "text": "select\n\n# select single column by name\nproduct_dat <- budget %>% select(product) \n\n# select single column by number\nproduct_dat <- budget %>% select(2) \n\n\n# select columns individually\nsales2019 <- budget %>% select(region, product, sales_2019)\n\n# select columns with colon\nsales2019 <- budget %>% select(region:sales_2019)\n\n\nregions <- budget %>% select(`Sales Region` = 1, 3:6)\n\nhead(regions, 2)\n\n# A tibble: 2 × 5\n  `Sales Region` sales_2019 sales_2020 expenses_2019 expenses_2020\n  <chr>               <dbl>      <dbl>         <dbl>         <dbl>\n1 North                2129       -517           822          -897\n2 North                 723         77          1037          1115\n\n\n\n# de-select individual columns\nsales <- budget %>% select(-expenses_2019, -expenses_2020)\n\n# de-select a range of columns\nsales <- budget %>% select(-(expenses_2019:expenses_2020))"
-  },
-  {
-    "objectID": "posts/week_11/index.html#filter",
-    "href": "posts/week_11/index.html#filter",
-    "title": "Week 11",
-    "section": "filter",
-    "text": "filter\n\n# select all rows where region equals North\nbudget %>% filter(region == \"North\")\n\n# A tibble: 2 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 North  widgets       2129       -517           822        -897 high    very h…\n2 North  gadgets        723         77          1037        1115 very h… very h…\n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020\n\n# select all rows where expenses_2020 were exactly equal to 200\nbudget %>% filter(expenses_2020 == 200)\n\n# A tibble: 1 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 South  gadgets       2022       -945          -610         200 low     low    \n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020\n\n# select all rows where sales_2019 was more than 100\nbudget %>% filter(sales_2019 > 100)\n\n# A tibble: 6 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 North  widgets       2129       -517           822        -897 high    very h…\n2 North  gadgets        723         77          1037        1115 very h… very h…\n3 South  widgets       1123      -1450          1004         672 high    neutral\n4 South  gadgets       2022       -945          -610         200 low     low    \n5 West   widgets        633        790           783        -315 neutral neutral\n6 West   gadgets       1204        426           433        -136 low     low    \n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020\n\n# everything but the North\nbudget %>% filter(region != \"North\")\n\n# A tibble: 6 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 South  widgets       1123      -1450          1004         672 high    neutral\n2 South  gadgets       2022       -945          -610         200 low     low    \n3 East   widgets       -728        -51          -801        -342 very l… very l…\n4 East   gadgets       -423       -354            94        2036 neutral high   \n5 West   widgets        633        790           783        -315 neutral neutral\n6 West   gadgets       1204        426           433        -136 low     low    \n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020\n\n\n\n# regions and products with profit in both 2019 and 2020\nprofit_both <- budget %>% \n  filter(\n    sales_2019 > expenses_2019,\n    sales_2020 > expenses_2020\n  )\n\n# the same as above, using & instead of a comma\nprofit_both <- budget %>% \n  filter(\n    sales_2019 > expenses_2019 &\n    sales_2020 > expenses_2020\n  )\n\n# regions and products with profit in 2019 or 2020\nprofit_either <- budget %>% \n  filter(\n    sales_2019 > expenses_2019 |\n    sales_2020 > expenses_2020\n  )\n\n# 2020 profit greater than 1000\nprofit_1000 <- budget %>%\n  filter(sales_2020 - expenses_2020 > 1000)\n\n\n# retain any rows where region is north or south, and where product equals widget\nbudget %>%\n  filter(region %in% c(\"North\", \"South\"),\n         product == \"widgets\")\n\n# A tibble: 2 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 North  widgets       2129       -517           822        -897 high    very h…\n2 South  widgets       1123      -1450          1004         672 high    neutral\n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020\n\n# retain any rows where the region is not east or west, and where the product does not equal gadgets\nbudget %>%\n  filter(!region %in% c(\"East\", \"West\"),\n         product != \"gadgets\")\n\n# A tibble: 2 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 North  widgets       2129       -517           822        -897 high    very h…\n2 South  widgets       1123      -1450          1004         672 high    neutral\n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020\n\n\n\nbudget %>%\n  filter(str_detect(satisfaction_2019, \"high\"))\n\n# A tibble: 3 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 North  widgets       2129       -517           822        -897 high    very h…\n2 North  gadgets        723         77          1037        1115 very h… very h…\n3 South  widgets       1123      -1450          1004         672 high    neutral\n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020"
-  },
-  {
-    "objectID": "posts/week_11/index.html#arrange",
-    "href": "posts/week_11/index.html#arrange",
-    "title": "Week 11",
-    "section": "arrange",
-    "text": "arrange\n\n# arranging the table \n# first by product in alphabetical order\n# then by \"region\" in reverse alphabetical order\nbudget %>%\n  arrange(product, desc(region))\n\n# A tibble: 8 × 8\n  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³\n  <chr>  <chr>        <dbl>      <dbl>         <dbl>       <dbl> <chr>   <chr>  \n1 West   gadgets       1204        426           433        -136 low     low    \n2 South  gadgets       2022       -945          -610         200 low     low    \n3 North  gadgets        723         77          1037        1115 very h… very h…\n4 East   gadgets       -423       -354            94        2036 neutral high   \n5 West   widgets        633        790           783        -315 neutral neutral\n6 South  widgets       1123      -1450          1004         672 high    neutral\n7 North  widgets       2129       -517           822        -897 high    very h…\n8 East   widgets       -728        -51          -801        -342 very l… very l…\n# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,\n#   ³​satisfaction_2020"
-  },
-  {
-    "objectID": "posts/week_11/index.html#mutate",
-    "href": "posts/week_11/index.html#mutate",
-    "title": "Week 11",
-    "section": "mutate",
-    "text": "mutate\n\nbudget2 <- budget %>%\n  mutate(\n    sales = sales_2019 + sales_2020,\n    expenses = expenses_2019 + expenses_2020,\n    profit = sales - expenses,\n    region = paste(region, \"Office\")\n  )\n\n\nbudget2 <- budget %>%\n  mutate(\n    sales = sales_2019 + sales_2020,\n    expenses = expenses_2019 + expenses_2020,\n    profit = sales - expenses,\n    region = paste(region, \"Office\")\n  )\n\n\nbudget2 <- budget2 %>%\n  mutate(profit_category = profit > 0,\n         product = as.factor(product))\n\n\nbudget3 <- budget2 %>%\n  mutate(profit_category = case_when(profit > 0 ~ \"PROFIT\",\n                                     profit < 0 ~ \"NO PROFIT\"))\n\n\n# create a column where people get a bonus if customer satisfaction was overall high or very high\n\nbonus <- budget3 %>%\n  mutate(bonus_2019 = case_when(satisfaction_2019 %in% c(\"very low\", \"low\", \"neutral\") ~ \"no bonus\",\n                                satisfaction_2019 %in% c(\"high\", \"very high\") ~ \"bonus\"))\n\n\n# new management takes over - people only get a bonus if customer satisfaction was overall high or very high AND if a profit was returned\n\nbonus2 <- budget3 %>%\n  mutate(bonus_2020 = case_when(satisfaction_2020 == \"high\" & \n                                  profit_category == \"PROFIT\" ~ \"bonus\",\n                                satisfaction_2020 == \"very high\" & \n                                  profit_category == \"PROFIT\" ~ \"bonus\",\n                                TRUE ~ \"No bonus\")) # set all other values to \"no bonus\""
-  },
-  {
-    "objectID": "posts/week_11/index.html#summarize",
-    "href": "posts/week_11/index.html#summarize",
-    "title": "Week 11",
-    "section": "summarize",
-    "text": "summarize\n\nbudget4 <- budget %>%\n  select(-satisfaction_2019, -satisfaction_2020) %>%\n  pivot_longer(cols = sales_2019:expenses_2020,\n               names_to = c(\"type\", \"year\"),\n               names_sep = \"_\",\n               values_to = \"value\") %>%\n  pivot_wider(names_from = type,\n              values_from = value)\n\nhead(budget4) # check the format\n\n# A tibble: 6 × 5\n  region product year  sales expenses\n  <chr>  <chr>   <chr> <dbl>    <dbl>\n1 North  widgets 2019   2129      822\n2 North  widgets 2020   -517     -897\n3 North  gadgets 2019    723     1037\n4 North  gadgets 2020     77     1115\n5 South  widgets 2019   1123     1004\n6 South  widgets 2020  -1450      672\n\n\n\nbudget4 %>%\n  summarise(\n    mean_sales = mean(sales),\n    mean_expenses = mean(expenses),\n    min_profit = min(expenses - sales),\n    max_profit = max(expenses - sales)\n  )\n\n# A tibble: 1 × 4\n  mean_sales mean_expenses min_profit max_profit\n       <dbl>         <dbl>      <dbl>      <dbl>\n1       291.          318.      -2632       2390"
-  },
-  {
-    "objectID": "posts/week_11/index.html#group-by",
-    "href": "posts/week_11/index.html#group-by",
-    "title": "Week 11",
-    "section": "group-by",
-    "text": "group-by\n\nyear_prod <- budget4 %>%\n  group_by() %>%\n  summarise(\n    mean_sales = mean(sales),\n    mean_expenses = mean(expenses),\n    min_profit = min(expenses - sales),\n    max_profit = max(expenses - sales)\n  ) %>%\n  ungroup()\n\n\nbudget4 %>%\n  summarise(\n    mean_sales = mean(sales),\n    mean_expenses = mean(expenses),\n    min_profit = min(expenses - sales),\n    max_profit = max(expenses - sales)\n  )\n\n# A tibble: 1 × 4\n  mean_sales mean_expenses min_profit max_profit\n       <dbl>         <dbl>      <dbl>      <dbl>\n1       291.          318.      -2632       2390\n\n\n\nyear_prod <- budget4 %>%\n  group_by() %>%\n  summarise(\n    mean_sales = mean(sales),\n    mean_expenses = mean(expenses),\n    min_profit = min(expenses - sales),\n    max_profit = max(expenses - sales)\n  ) %>%\n  ungroup()\n\n\nyear_prod\n\n# A tibble: 1 × 4\n  mean_sales mean_expenses min_profit max_profit\n       <dbl>         <dbl>      <dbl>      <dbl>\n1       291.          318.      -2632       2390\n\n\n\n# arrange by maximum profit\nyear_prod %>%\n  arrange(desc(max_profit))\n\n# A tibble: 1 × 4\n  mean_sales mean_expenses min_profit max_profit\n       <dbl>         <dbl>      <dbl>      <dbl>\n1       291.          318.      -2632       2390\n\n\n\n# return top 3 sales\nbudget4 %>%\n  slice_max(n = 3, order_by = sales)\n\n# A tibble: 3 × 5\n  region product year  sales expenses\n  <chr>  <chr>   <chr> <dbl>    <dbl>\n1 North  widgets 2019   2129      822\n2 South  gadgets 2019   2022     -610\n3 West   gadgets 2019   1204      433\n\n\n\n# return top sale for each region\nbudget4 %>%\n  group_by(region) %>%\n  slice_max(n = 1, order_by = sales)\n\n# A tibble: 4 × 5\n# Groups:   region [4]\n  region product year  sales expenses\n  <chr>  <chr>   <chr> <dbl>    <dbl>\n1 East   widgets 2020    -51     -342\n2 North  widgets 2019   2129      822\n3 South  gadgets 2019   2022     -610\n4 West   gadgets 2019   1204      433"
+    "text": "Logic, Loops, and Functions\n\n\n\n\n\n\n\n\n\n\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday 2\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday 1\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 11\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nApr 24, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9 Report\n\n\n\n\n\n\n\nreport\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMidterm Part 1\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nWeek 3\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 12\n\n\n\n\n\n\n\nfinal project example\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMidterm Part 2\n\n\n\n\n\n\n\nMidterm\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntip sheet\n\n\n\n\n\n\n\ntips\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nAlbina Music\n\n\n\n\n\n\nNo matching items"
   }
 ]

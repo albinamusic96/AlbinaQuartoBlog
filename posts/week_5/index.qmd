@@ -3,4 +3,74 @@ title: "Week 5"
 author: "Albina Music"
 date: "2023-02-18"
 categories: [qmd notes]
+execute:
+  error: true
 ---
+
+## load libraries
+
+```{r}
+library(tidyverse)     # includes readr & tibble
+library(rio)           # for almost any data import/export
+library(haven)         # for SPSS, Stata,and SAS files
+library(readxl)        # for Excel files
+library(googlesheets4) # for Google Sheets
+```
+
+## options for viewing data
+
+```{r}
+data(cars) # make data from R package available in global environment
+#View(cars) # view in editor pane
+#print(cars) # print to console
+#cars # print to console
+
+# show columns as rows
+glimpse(cars)
+```
+
+```{r}
+#show first 10 lines of table
+head(cars)
+```
+
+```{r}
+# print nicely to web
+knitr::kable(head(cars))
+```
+
+## produce summaries
+
+```{r}
+summary(cars)
+```
+
+## importing data
+
+```{r}
+library(rio)
+
+demo_tsv <- import(file = "data/demo.tsv")
+
+glimpse(demo_tsv)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```

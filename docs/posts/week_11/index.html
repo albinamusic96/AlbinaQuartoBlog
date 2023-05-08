@@ -208,9 +208,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.0     ✔ readr     2.1.4
+✔ dplyr     1.1.2     ✔ readr     2.1.4
 ✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.1     ✔ tibble    3.1.8
+✔ ggplot2   3.4.1     ✔ tibble    3.2.1
 ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
 ✔ purrr     1.0.1     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -265,52 +265,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(region <span class="sc">==</span> <span class="st">"North"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 North  widgets       2129       -517           822        -897 high    very h…
-2 North  gadgets        723         77          1037        1115 very h… very h…
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 North  widgets       2129       -517           822          -897
+2 North  gadgets        723         77          1037          1115
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select all rows where expenses_2020 were exactly equal to 200</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(expenses_2020 <span class="sc">==</span> <span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 South  gadgets       2022       -945          -610         200 low     low    
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 South  gadgets       2022       -945          -610           200
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select all rows where sales_2019 was more than 100</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(sales_2019 <span class="sc">&gt;</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 North  widgets       2129       -517           822        -897 high    very h…
-2 North  gadgets        723         77          1037        1115 very h… very h…
-3 South  widgets       1123      -1450          1004         672 high    neutral
-4 South  gadgets       2022       -945          -610         200 low     low    
-5 West   widgets        633        790           783        -315 neutral neutral
-6 West   gadgets       1204        426           433        -136 low     low    
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 North  widgets       2129       -517           822          -897
+2 North  gadgets        723         77          1037          1115
+3 South  widgets       1123      -1450          1004           672
+4 South  gadgets       2022       -945          -610           200
+5 West   widgets        633        790           783          -315
+6 West   gadgets       1204        426           433          -136
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># everything but the North</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"North"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 South  widgets       1123      -1450          1004         672 high    neutral
-2 South  gadgets       2022       -945          -610         200 low     low    
-3 East   widgets       -728        -51          -801        -342 very l… very l…
-4 East   gadgets       -423       -354            94        2036 neutral high   
-5 West   widgets        633        790           783        -315 neutral neutral
-6 West   gadgets       1204        426           433        -136 low     low    
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 South  widgets       1123      -1450          1004           672
+2 South  gadgets       2022       -945          -610           200
+3 East   widgets       -728        -51          -801          -342
+4 East   gadgets       -423       -354            94          2036
+5 West   widgets        633        790           783          -315
+6 West   gadgets       1204        426           433          -136
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -346,12 +342,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>         product <span class="sc">==</span> <span class="st">"widgets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 North  widgets       2129       -517           822        -897 high    very h…
-2 South  widgets       1123      -1450          1004         672 high    neutral
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 North  widgets       2129       -517           822          -897
+2 South  widgets       1123      -1450          1004           672
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retain any rows where the region is not east or west, and where the product does not equal gadgets</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>budget <span class="sc">%&gt;%</span></span>
@@ -359,12 +354,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>         product <span class="sc">!=</span> <span class="st">"gadgets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 North  widgets       2129       -517           822        -897 high    very h…
-2 South  widgets       1123      -1450          1004         672 high    neutral
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 North  widgets       2129       -517           822          -897
+2 South  widgets       1123      -1450          1004           672
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -372,13 +366,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(satisfaction_2019, <span class="st">"high"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 North  widgets       2129       -517           822        -897 high    very h…
-2 North  gadgets        723         77          1037        1115 very h… very h…
-3 South  widgets       1123      -1450          1004         672 high    neutral
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 North  widgets       2129       -517           822          -897
+2 North  gadgets        723         77          1037          1115
+3 South  widgets       1123      -1450          1004           672
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -392,18 +385,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(product, <span class="fu">desc</span>(region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 8
-  region product sales_2019 sales_2020 expenses_2019 expenses_…¹ satis…² satis…³
-  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
-1 West   gadgets       1204        426           433        -136 low     low    
-2 South  gadgets       2022       -945          -610         200 low     low    
-3 North  gadgets        723         77          1037        1115 very h… very h…
-4 East   gadgets       -423       -354            94        2036 neutral high   
-5 West   widgets        633        790           783        -315 neutral neutral
-6 South  widgets       1123      -1450          1004         672 high    neutral
-7 North  widgets       2129       -517           822        -897 high    very h…
-8 East   widgets       -728        -51          -801        -342 very l… very l…
-# … with abbreviated variable names ¹​expenses_2020, ²​satisfaction_2019,
-#   ³​satisfaction_2020</code></pre>
+  region product sales_2019 sales_2020 expenses_2019 expenses_2020
+  &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+1 West   gadgets       1204        426           433          -136
+2 South  gadgets       2022       -945          -610           200
+3 North  gadgets        723         77          1037          1115
+4 East   gadgets       -423       -354            94          2036
+5 West   widgets        633        790           783          -315
+6 South  widgets       1123      -1450          1004           672
+7 North  widgets       2129       -517           822          -897
+8 East   widgets       -728        -51          -801          -342
+# ℹ 2 more variables: satisfaction_2019 &lt;chr&gt;, satisfaction_2020 &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>

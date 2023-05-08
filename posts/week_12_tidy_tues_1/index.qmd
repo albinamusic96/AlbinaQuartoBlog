@@ -1,0 +1,58 @@
+---
+title: "Tidy Tuesday 1"
+author: "Albina Music"
+date: "2023-05-03"
+categories: [qmd notes]
+---
+
+## load the data and packages
+```{r}
+library(tidyverse)
+library(dplyr)
+
+tuesdata <- tidytuesdayR::tt_load('2023-05-02')
+
+plots <- tuesdata$plots
+species <- tuesdata$species
+surveys <- tuesdata$surveys
+```
+
+## mice per year
+```{r}
+
+mice_count_by_year<-surveys %>%
+  group_by(year) %>%
+  count()
+
+ggplot(mice_count_by_year, aes(x=year, y=n))+
+  geom_line()+
+  geom_point()+
+  ggtitle("Mice Count By Year")+
+  scale_x_continuous(breaks=seq(1980,2020,5))
+```
+
+## mice per year by sex
+```{r}
+mice_count_by_year_sex <- surveys %>%
+  group_by(year,sex) %>%
+  count()
+ggplot(mice_count_by_year_sex, aes(x= year, y=n, color=sex))+
+  geom_line() +
+  ggtitle("Mice count by year and sex")+
+  scale_x_continuous(breaks=seq(1980,2020,5))
+```
+
+## mice per year by species
+```{r}
+mice_count_by_year_species <- surveys %>%
+  group_by(year,species) %>%
+  count()
+
+ggplot(mice_count_by_year_species, aes(x=year, 
+                                       y=n,
+                                       color=species,
+                                       linetype=species))+
+  geom_line()+
+  ggtitle("Mice Count By Year")+
+  scale_x_continuous(breaks=seq(1980,2020,5))
+```
