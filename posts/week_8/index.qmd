@@ -1,0 +1,87 @@
+---
+title: "Week 8"
+author: "Albina Music"
+date: "2023-02-18"
+categories: [qmd notes]
+execute:
+  error: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+
+```
+
+```{r}
+customers <- tibble(
+  id = 1:5,
+  city = c("Port Ellen", "Dufftown", NA, "Aberlour", "Tobermory"),
+  postcode = c("PA42 7DU", "AB55 4DH", NA, "AB38 7RY", "PA75 6NR")
+)
+```
+
+```{r}
+orders <- tibble(
+  id = c(2, 3, 4, 4, 5, 5, 6, 6, 7),
+  items = c(10, 18, 21, 23, 9, 11, 11, 12, 3)
+)
+```
+
+
+## what does dylyr mutate do?
+```{r}
+orders_B <- tibble(
+  id = c(2, 3, 4, 4, 5, 5, 6, 6, 7),
+  items = c(10, 18, 21, 23, 9, 11, 11, 12, 3)
+)
+# add new columns 
+orders_B %>%
+  mutate(satisfaction = NA,
+         number = 1:9)
+
+# assign back to tibble
+
+orders_B <- orders_B %<%
+  mutate(satisfaction = NA,
+         numbers = 1:9)
+
+# convert to strings(characters)
+
+orders_B %<%
+  mutate(numbers_as_strings = as.character(numbers))
+
+```
+
+## left join
+```{r}
+left_data <- left_join(customers, orders, by = "id")
+left_data
+
+```
+
+## right join
+```{r}
+right_data <- right_join(customers, orders, by = "id")
+right_data
+
+```
+
+## inner joins
+```{r}
+inner_data <- inner_join(customers, orders, by = "id")
+inner_data
+
+```
+
+## full join
+```{r}
+full_data <- full_join(customers, orders, by = "id")
+full_data
+
+```
+
+## filtering joins
+```{r}
+semi_data <- semi_join(customers, orders, by = "id")
+semi_data
+```
