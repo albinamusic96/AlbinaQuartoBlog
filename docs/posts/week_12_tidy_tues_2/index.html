@@ -222,38 +222,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2023-02-21'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Only -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.
-Only -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.
-Only -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.
-Only -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.</code></pre>
+<pre><code>--- Compiling #TidyTuesday Information for 2023-02-21 ----
+--- There is 1 file available ---
+--- Starting Download ---</code></pre>
 </div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in github_sha("static"): Response Code 403: API rate limit exceeded for 146.245.244.218. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Downloading file 1 of 1: `bob_ross.csv`</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2023</span>, <span class="at">week =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Only -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.
-Only -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.
-Only -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.</code></pre>
+<pre><code>--- Download complete ---</code></pre>
 </div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in github_sha("static"): Response Code 403: API rate limit exceeded for 146.245.244.218. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)</code></pre>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2023</span>, <span class="at">week =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>--- Compiling #TidyTuesday Information for 2023-02-21 ----
+--- There is 1 file available ---
+--- Starting Download ---</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bob_ross <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>bob_ross</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'tuesdata' not found</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Downloading file 1 of 1: `bob_ross.csv`</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>--- Download complete ---</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bob_ross <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>bob_ross</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="how-many-colors-were-used-in-the-paintings" class="level2">
 <h2 class="anchored" data-anchor-id="how-many-colors-were-used-in-the-paintings">how many colors were used in the paintings</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bob_ross_longer <span class="ot">&lt;-</span> bob_ross <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">27</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name) <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">sum</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in pivot_longer(., 10:27): object 'bob_ross' not found</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>bob_ross_longer <span class="ot">&lt;-</span> bob_ross <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">27</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">sum</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

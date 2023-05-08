@@ -1,0 +1,28 @@
+---
+title: "Week 13"
+author: "Albina Music"
+date: "2023-05-08"
+format: 
+  revealjs:
+    incremental: true
+---
+
+# Part One
+
+---
+
+## Slide 1
+ - stuff
+ - stuff
+ 
+ ---
+ 
+# Part Two
+ 
+ ---
+ 
+## Slide 2
+- stuff 
+- stuff
+
+---

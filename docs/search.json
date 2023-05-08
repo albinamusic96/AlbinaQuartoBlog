@@ -1,285 +1,5 @@
 [
   {
-    "objectID": "posts/week_12_tidy_tues_2/index.html",
-    "href": "posts/week_12_tidy_tues_2/index.html",
-    "title": "Tidy Tuesday 2",
-    "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n\nlibrary(tidytuesdayR)\n\ntuesdata <- tidytuesdayR::tt_load('2023-02-21')\n\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\nError in github_sha(\"static\"): Response Code 403: API rate limit exceeded for 146.245.244.218. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\n\ntuesdata <- tidytuesdayR::tt_load(2023, week = 8)\n\nOnly -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.\nOnly -1 Github queries remaining until 2023-05-08 11:56:17 AM EDT.\n\n\nError in github_sha(\"static\"): Response Code 403: API rate limit exceeded for 146.245.244.218. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\n\nbob_ross <- tuesdata$bob_ross\n\nError in eval(expr, envir, enclos): object 'tuesdata' not found"
-  },
-  {
-    "objectID": "posts/week_12_tidy_tues_2/index.html#how-many-colors-were-used-in-the-paintings",
-    "href": "posts/week_12_tidy_tues_2/index.html#how-many-colors-were-used-in-the-paintings",
-    "title": "Tidy Tuesday 2",
-    "section": "how many colors were used in the paintings",
-    "text": "how many colors were used in the paintings\n\nbob_ross_longer <- bob_ross %>%\n  pivot_longer(10:27) %>%\n  group_by(name) %>%\n  summarize(count = sum(value))\n\nError in pivot_longer(., 10:27): object 'bob_ross' not found"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/midterm_part_1/index.html#write-a-blog-post-where-you-demonstrate-your-ability-to-use-these-basic-programming-concepts-in-r.",
-    "href": "posts/midterm_part_1/index.html#write-a-blog-post-where-you-demonstrate-your-ability-to-use-these-basic-programming-concepts-in-r.",
-    "title": "Midterm Part 1",
-    "section": "Write a blog post where you demonstrate your ability to use these basic programming concepts in R.",
-    "text": "Write a blog post where you demonstrate your ability to use these basic programming concepts in R.\n\nR objects: show that you understand and can create/use objects of various types, including at least: character/string, numeric, integer, logical, data.frame, and list. Show that you can index objects appropriately (e.g., locate elements of an object, change elements of an object etc.)\n\n\n## Character/String\nstring1 <- \"Hello\"\nstring2 <- \"world\"\nresult1 <- paste(string1, string2)\nprint(result1) \n\n[1] \"Hello world\"\n\nstring3 <- \"Goodbye\"\nstring4 <- \"world\"\nresult2 <- paste0(string3, string4)\nprint(result2) \n\n[1] \"Goodbyeworld\"\n\n## Numeric\nmy_num <- 5.2\n\nmy_num + 3 \n\n[1] 8.2\n\nmy_nums <- c(1, 2, 3, 4, 5)\n\nmy_nums[3]\n\n[1] 3\n\n## Integer\nmy_int <- 5L\n\nmy_int + 3L \n\n[1] 8\n\nmy_ints <- c(1L, 2L, 3L, 4L, 5L)\n\nmy_ints[3]\n\n[1] 3\n\n## Logical\nmy_bool <- TRUE\n\nmy_bool & FALSE \n\n[1] FALSE\n\nmy_logicals <- c(TRUE, FALSE, TRUE, TRUE, FALSE)\n\nmy_logicals[3]\n\n[1] TRUE\n\n## Data Frame\nmy_df <- data.frame(name = c(\"John\", \"Mary\", \"Bob\"), age = c(25, 30, 35), married = c(TRUE, TRUE, FALSE))\n\nmy_df$name\n\n[1] \"John\" \"Mary\" \"Bob\" \n\nmy_df[2, 3] \n\n[1] TRUE\n\n## List\nmy_list <- list(name = \"Albina\", age = 28, married = TRUE, hobbies = c(\"reading\", \"traveling\", \"cooking\"))\n\nmy_list[[1]] \n\n[1] \"Albina\"\n\nmy_list[[4]][2] \n\n[1] \"traveling\"\n\n\n\nLogical operations: show that you understand and can use logical operators in R (e.g., == | > < >= <=)\n\n\n## == (equal to)\nx <- 5\ny <- 7\n\nx == y \n\n[1] FALSE\n\n## >< (greater than)\nx <- 5\ny <- 7\n\nx > y\n\n[1] FALSE\n\n## >< (less than)\nx <- 5\ny <- 7\n\nx < y \n\n[1] TRUE\n\n## ><|= (greater than or equal to)\nx <- 5\ny <- 7\n\nx >= y \n\n[1] FALSE\n\n## ><|= (less than or equal to)\nx <- 5\ny <- 7\n\nx <= y \n\n[1] TRUE\n\n## &(and)\nx <- TRUE\ny <- FALSE\n\nx & y \n\n[1] FALSE\n\n## | (or)\nx <- TRUE\ny <- FALSE\n\nx | y \n\n[1] TRUE\n\n\n\nLoops: Show that you understand the components of a for loop, and that you can use a for loop.\n\n\n## Basic Loops\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  print(num)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n## Nested Loops\nmy_nums1 <- c(1, 2, 3)\nmy_nums2 <- c(4, 5, 6)\n\nfor (num1 in my_nums1) {\n  for (num2 in my_nums2) {\n    print(num1 + num2)\n  }\n}\n\n[1] 5\n[1] 6\n[1] 7\n[1] 6\n[1] 7\n[1] 8\n[1] 7\n[1] 8\n[1] 9\n\n## \"if\" loop\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  if (num %% 2 == 0) {\n    print(num)\n  }\n}\n\n[1] 2\n[1] 4\n\n## \"break\" loop\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  if (num == 3) {\n    break\n  }\n  print(num)\n}\n\n[1] 1\n[1] 2\n\n## \"continue\" loop\nmy_nums <- c(1, 2, 3, 4, 5)\n\nfor (num in my_nums) {\n  if (num %% 2 == 1) {\n    next\n  }\n  print(num)\n}\n\n[1] 2\n[1] 4\n\n\n\nFunctions: Show that you understand the syntax for declaring your own function, and that you can declare and run your own custom function to accomplish some task (you choose what the function does).\n\n\n## example 1\nmy_function <- function(x, y) {\n  z <- x + y\n  return(z)\n}\n\nresult <- my_function(3, 5)\nprint(result) \n\n[1] 8\n\n## example 2\nsum_of_squares <- function(v) {\n  sum <- 0\n\n  for (i in v) {\n    if (i %% 2 == 0) {\n      sum <- sum + i^2\n    }\n  }\n  \n  return(sum)\n}"
-  },
-  {
-    "objectID": "posts/week_5/index.html",
-    "href": "posts/week_5/index.html",
-    "title": "Week 5",
-    "section": "",
-    "text": "library(tidyverse)     # includes readr & tibble\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n\nlibrary(rio)           # for almost any data import/export\nlibrary(haven)         # for SPSS, Stata,and SAS files\nlibrary(readxl)        # for Excel files\nlibrary(googlesheets4) # for Google Sheets"
-  },
-  {
-    "objectID": "posts/week_5/index.html#options-for-viewing-data",
-    "href": "posts/week_5/index.html#options-for-viewing-data",
-    "title": "Week 5",
-    "section": "options for viewing data",
-    "text": "options for viewing data\n\ndata(cars) # make data from R package available in global environment\n#View(cars) # view in editor pane\n#print(cars) # print to console\n#cars # print to console\n\n# show columns as rows\nglimpse(cars)\n\nRows: 50\nColumns: 2\n$ speed <dbl> 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12, 12, 12, 13, 13, 13…\n$ dist  <dbl> 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26, 34…\n\n\n\n#show first 10 lines of table\nhead(cars)\n\n  speed dist\n1     4    2\n2     4   10\n3     7    4\n4     7   22\n5     8   16\n6     9   10\n\n\n\n# print nicely to web\nknitr::kable(head(cars))\n\n\n\n\nspeed\ndist\n\n\n\n\n4\n2\n\n\n4\n10\n\n\n7\n4\n\n\n7\n22\n\n\n8\n16\n\n\n9\n10"
-  },
-  {
-    "objectID": "posts/week_5/index.html#produce-summaries",
-    "href": "posts/week_5/index.html#produce-summaries",
-    "title": "Week 5",
-    "section": "produce summaries",
-    "text": "produce summaries\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
-  },
-  {
-    "objectID": "posts/week_5/index.html#importing-data",
-    "href": "posts/week_5/index.html#importing-data",
-    "title": "Week 5",
-    "section": "importing data",
-    "text": "importing data\n\nlibrary(rio)\n\ndemo_tsv <- import(file = \"data/demo.tsv\")\n\nError in import(file = \"data/demo.tsv\"): No such file\n\nglimpse(demo_tsv)\n\nError in glimpse(demo_tsv): object 'demo_tsv' not found"
-  },
-  {
-    "objectID": "posts/week_4/index.html",
-    "href": "posts/week_4/index.html",
-    "title": "Week 4",
-    "section": "",
-    "text": "Write a new blog post and submit the link to this assignment on blackboard. Write your blog around the three big themes:\nData types: Show that you understand what is available to you in R. Note also, this goal overlaps with part of the midterm project. See the appendix on Data Types in the textbook for help. Write notes and R code chunks to demonstrate your knowledge\nTidy Data: Show that you understand what this means. Give an example of data this is in tidy format, and data that is not.\nggplot2: We will continue learning about this across the semester. Show at a minimum that you can make a graph and add it to your blog. Try examples from the textbook. Show that you understand the layer concept. Identify aspects that are confusing to you so we can discuss them in class."
-  },
-  {
-    "objectID": "posts/week_3/index.html",
-    "href": "posts/week_3/index.html",
-    "title": "Week 3",
-    "section": "",
-    "text": "Be able to make a new .qmd document Yes, I can do this.\n\n\nuse the top-right green plus icon\nfrom the file menu\nfrom the file tab choose green plus icon.\n\n\nBe able to render a .qmd document\n\n\n# press the render button\n\nExplain the difference between the source editor view and visual editor view in Rstudio.\n\n# Source shows plain text. Visual editor shows rendered markdown text."
-  },
-  {
-    "objectID": "posts/week_3/index.html#a-second-level",
-    "href": "posts/week_3/index.html#a-second-level",
-    "title": "Week 3",
-    "section": "a second level",
-    "text": "a second level\n\nBe aware of resources to help you learn more about markdown options.\n\nitalics & bold\nsuperscript2 / subscript2\nTest10\nTest2302403\nstrikethrough\nasdf ads fdsaf das fas fsad fa sdfa ds\nverbatim code\nLet’s say I’m writing about the ggplot2 library.\nhttps://quarto.org\nQuarto\n\n\n\nThis is an elephant\n\n\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1\n\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\nPut our code in here\n1 + 1\na <- 1\nb <- 3\n# some comments\n\\(x=1\\)\n\\(E = mc^{2}\\)\n\nBe able to insert an R code chunk, and show the output in the rendered document.\n\n\nmacro for quick insert\n\n\n2+2\n\n[1] 4\n\n\nmac - “option-command-i” windows - Ctrl-Alt-I\n\nRunning R code chunks in a qmd\n\n\npressing play\ncopy/paste into console\nhighlight then command-enter (mac)\nprecedence issues (first to last)\n\n\nBe aware of R code chunk options, and how to use eval, messages, error, warning, and echo.\n\n\nhist(mtcars$mpg)\n\n\n\n\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\n\nhist(mtcars$mpg)\n\n\n\n\n\nBe able to set code chunk options per chunk, and/or for the whole document. Understand rules for precedence (which options will apply if both are set.)\n\n\n# Yes. Use execute in top-level yml, chunk options have precedence over global options.\n\n\nWrite inline r code.\n\n2\n\na <- 54\nb <- 100\n\nc <- a+b\n\n\nExplain how the rendering environment is different from the Rstudio environment.\n\n\nc <- a+b\nc\n\n[1] 154"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html",
-    "href": "posts/logic_loops_functions/index.html",
-    "title": "Logic, Loops, and Functions",
-    "section": "",
-    "text": "Logic statements are used to compare two things, or two sets of things. The output of comparison is a TRUE or FALSE statement. If many things are being compared at once, the output could be many TRUE or FALSE statements for each comparison"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#equal-to",
-    "href": "posts/logic_loops_functions/index.html#equal-to",
-    "title": "Logic, Loops, and Functions",
-    "section": "equal to (==)",
-    "text": "equal to (==)\n\n1 == 1 # is 1 equal to 1?\n\n[1] TRUE\n\n1 == 2 # is 1 equal to 2?\n\n[1] FALSE\n\nc(1, 2, 3) == c(2, 1, 3) # compares each element with each element\n\n[1] FALSE FALSE  TRUE\n\n1 == c(2, 1, 3)\n\n[1] FALSE  TRUE FALSE"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#not-equal-to",
-    "href": "posts/logic_loops_functions/index.html#not-equal-to",
-    "title": "Logic, Loops, and Functions",
-    "section": "not equal to (!=)",
-    "text": "not equal to (!=)\n\n1 != 1 # is 1 equal to 1?\n\n[1] FALSE\n\n1 != 2 # is 1 equal to 2?\n\n[1] TRUE\n\nc(1, 2, 3) != c(2, 1, 3) # compares each element with each element\n\n[1]  TRUE  TRUE FALSE\n\n1 != c(2, 1, 3)\n\n[1]  TRUE FALSE  TRUE"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#greater-than-less-than",
-    "href": "posts/logic_loops_functions/index.html#greater-than-less-than",
-    "title": "Logic, Loops, and Functions",
-    "section": "greater than/ less than",
-    "text": "greater than/ less than\n\n1 > 1 # is 1 greater than 1?\n\n[1] FALSE\n\n5 > 1 # is 5 greater than 1?\n\n[1] TRUE\n\n3 < 2 # is 3 less than 2?\n\n[1] FALSE\n\n3 < 1 # is 3 less than 1?\n\n[1] FALSE\n\nc(1, 2, 3) > c(2, 1, 3) # ask the question element by element\n\n[1] FALSE  TRUE FALSE\n\nc(1, 2, 3) < c(2, 1, 3)\n\n[1]  TRUE FALSE FALSE\n\n2 > c(1, 2, 3) # is greater than each of the numbers\n\n[1]  TRUE FALSE FALSE"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#is-something-greater-than-or-equal-to-something-else",
-    "href": "posts/logic_loops_functions/index.html#is-something-greater-than-or-equal-to-something-else",
-    "title": "Logic, Loops, and Functions",
-    "section": "is something greater than or equal to something else (>= <=)",
-    "text": "is something greater than or equal to something else (>= <=)\n\n1 >= 1 # is 1 greater than 1?\n\n[1] TRUE\n\n5 >= 1 # is 5 greater than 1?\n\n[1] TRUE\n\n3 <= 2 # is 3 less than 2?\n\n[1] FALSE\n\n3 <= 1 # is 3 less than 1?\n\n[1] FALSE\n\nc(1, 2, 3) >= c(2, 1, 3) # ask the question element by element\n\n[1] FALSE  TRUE  TRUE\n\nc(1, 2, 3) <= c(2, 1, 3)\n\n[1]  TRUE FALSE  TRUE\n\n2 >= c(1, 2, 3) # is greater than each of the numbers\n\n[1]  TRUE  TRUE FALSE"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#andthe-ampersand-is-used-for-and-which-allows-use-to-evaluate-whether-two-or-more-properties-are-all-true.",
-    "href": "posts/logic_loops_functions/index.html#andthe-ampersand-is-used-for-and-which-allows-use-to-evaluate-whether-two-or-more-properties-are-all-true.",
-    "title": "Logic, Loops, and Functions",
-    "section": "AND(the ampersand (&) is used for “AND”, which allows use to evaluate whether two or more properties are all TRUE).",
-    "text": "AND(the ampersand (&) is used for “AND”, which allows use to evaluate whether two or more properties are all TRUE).\n\n# is 16 divisible by 4 AND 8\n16 %% 4 == 0 & 16 %% 8 == 0\n\n[1] TRUE\n\n# is 16 divisible by 4 AND 3\n16 %% 4 == 0 & 16 %% 3 == 0\n\n[1] FALSE\n\n# is 16 divisible by 8 and 4 and 2\n16 %% 4 == 0 & 16 %% 8 == 0 & 16 %% 2 == 0\n\n[1] TRUE\n\n16 %% 4 == 0\n\n[1] TRUE\n\n16 %% 8 == 0\n\n[1] TRUE\n\n16 %% 2 == 0\n\n[1] TRUE\n\n16 %% 1 == 0\n\n[1] TRUE"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#orthe-is-used-for-or-which-allows-use-to-evaluate-at-least-one-of-the-properties-is-true.",
-    "href": "posts/logic_loops_functions/index.html#orthe-is-used-for-or-which-allows-use-to-evaluate-at-least-one-of-the-properties-is-true.",
-    "title": "Logic, Loops, and Functions",
-    "section": "OR(the (|) is used for OR, which allows use to evaluate at least one of the properties is TRUE).",
-    "text": "OR(the (|) is used for OR, which allows use to evaluate at least one of the properties is TRUE).\n\n# is 16 divisible by 4 OR 8\n16 %% 4 == 0 | 16 %% 8 == 0\n\n[1] TRUE\n\n# is 16 divisible by 4 OR 3\n16 %% 4 == 0 | 16 %% 3 == 0\n\n[1] TRUE\n\nTRUE | FALSE\n\n[1] TRUE\n\nFALSE | TRUE\n\n[1] TRUE"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#true-falsewhen-r-returns-values-as-true-or-false-it-returns-a-logical-variable.-it-also-treats-true-as-a-1-and-false-as-a-0.",
-    "href": "posts/logic_loops_functions/index.html#true-falsewhen-r-returns-values-as-true-or-false-it-returns-a-logical-variable.-it-also-treats-true-as-a-1-and-false-as-a-0.",
-    "title": "Logic, Loops, and Functions",
-    "section": "TRUE FALSE(when R returns values as TRUE or FALSE, it returns a logical variable. It also treats TRUE as a 1, and FALSE as a 0).",
-    "text": "TRUE FALSE(when R returns values as TRUE or FALSE, it returns a logical variable. It also treats TRUE as a 1, and FALSE as a 0).\n\nc(1, 2, 3) == c(1, 2, 3)\n\n[1] TRUE TRUE TRUE\n\nsum(c(1, 2, 3) == c(1, 2, 3))\n\n[1] 3\n\nc(1, 2, 3) == c(2, 1, 3)\n\n[1] FALSE FALSE  TRUE\n\nsum(c(1, 2, 3) == c(2, 1, 3))\n\n[1] 1"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#if-elsea-roller-coaster-operator-checks-if-people-are-taller-than-a-line-to-see-if-they-can-ride-the-coaster.-this-is-an-if-else-control-structure.-if-the-person-is-taller-than-the-line-then-they-can-go-on-the-ride-else-otherwise-the-person-can-not-go-on-the-ride.-in-other-words-if-the-situation-is-x-then-do-something-else-if-the-situation-is-not-x-then-do-something-different.-if-and-else-statements-let-us-specify-the-conditions-when-specific-actions-are-taken.-generally-if-and-else-statements-are-used-inside-loops-for-or-while-or-repeat-loops-because-at-each-step-or-iteration-of-the-loop-we-want-to-check-something-and-then-do-something.",
-    "href": "posts/logic_loops_functions/index.html#if-elsea-roller-coaster-operator-checks-if-people-are-taller-than-a-line-to-see-if-they-can-ride-the-coaster.-this-is-an-if-else-control-structure.-if-the-person-is-taller-than-the-line-then-they-can-go-on-the-ride-else-otherwise-the-person-can-not-go-on-the-ride.-in-other-words-if-the-situation-is-x-then-do-something-else-if-the-situation-is-not-x-then-do-something-different.-if-and-else-statements-let-us-specify-the-conditions-when-specific-actions-are-taken.-generally-if-and-else-statements-are-used-inside-loops-for-or-while-or-repeat-loops-because-at-each-step-or-iteration-of-the-loop-we-want-to-check-something-and-then-do-something.",
-    "title": "Logic, Loops, and Functions",
-    "section": "IF ELSE(a roller-coaster operator checks if people are taller than a line to see if they can ride the coaster. This is an IF ELSE control structure. IF the person is taller than the line, then they can go on the ride; ELSE (otherwise) the person can not go on the ride. In other words, IF the situation is X, then do something; ELSE (if the situation is not X), then do something different. IF and ELSE statements let us specify the conditions when specific actions are taken. Generally, IF and ELSE statements are used inside loops (for, or while, or repeat loops), because at each step or iteration of the loop, we want to check something, and then do something).",
-    "text": "IF ELSE(a roller-coaster operator checks if people are taller than a line to see if they can ride the coaster. This is an IF ELSE control structure. IF the person is taller than the line, then they can go on the ride; ELSE (otherwise) the person can not go on the ride. In other words, IF the situation is X, then do something; ELSE (if the situation is not X), then do something different. IF and ELSE statements let us specify the conditions when specific actions are taken. Generally, IF and ELSE statements are used inside loops (for, or while, or repeat loops), because at each step or iteration of the loop, we want to check something, and then do something).\n\na <- 1 # define a to be a 1\n\nif (a == 1) {\n  print(a) # this is what happens if a==1\n} else {\n  print(\"A is not 1\") # this is what happens if a is not 1\n}\n\n[1] 1\n\na <- 2 # define a to be a 1\nif (a == 1) {\n  print(a) # this is what happens if a==1\n} else {\n  print(rbinom(10,1,.5)) # this is what happens if a is not 1\n  1+1\n  print(\"hello world\")\n  rbinom(10,1,.5)\n}\n\n [1] 0 0 0 1 0 1 0 1 0 0\n[1] \"hello world\"\n\n\n [1] 1 1 1 0 1 1 0 1 1 0\n\na <- 3.5\n\nif(a >= 4){\n  print(\"get to go on the cyclone\")\n}\n\nif(a < 4){\n  print(\"sorry\")\n}\n\n[1] \"sorry\"\n\na <- c(1, 0, 1, 0, 0, 0, 1) # make a variable contain 1s and 0s\n# write a loop to check each element in the variable\n# and do different things depending on the element\n\nfor (i in a) {\n  \n  if (i == 1) {\n    print(\"I'm a 1\") # what to do when i is 1\n  } else {\n    print(\"I'm not a 1\") # what to do when i is not 1\n  }\n  \n}\n\n[1] \"I'm a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm not a 1\"\n[1] \"I'm a 1\"\n\na <- c(1, 2, 3, 1, 2, 0, 1) # make a variable contain 1s and 0s\n# write a loop to check each element in the variable\n# and do different things depending on the element\nfor (i in a) {\n  if (i == 1) {\n    print(\"I'm a 1\") # what to do when i is 1\n  } else if (i == 2) {\n    print(\"I'm a 2\") # what to do when i is 2\n  } else if (i == 3) {\n    print(\"I'm a 3\") # what to do when i is 3\n  } else {\n    print(\"I'm not any of the above\") #what to do when none are true\n  }\n}\n\n[1] \"I'm a 1\"\n[1] \"I'm a 2\"\n[1] \"I'm a 3\"\n[1] \"I'm a 1\"\n[1] \"I'm a 2\"\n[1] \"I'm not any of the above\"\n[1] \"I'm a 1\""
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#loopsloop-control-is-defined-in-between-the-parentheses-.-the-name-of-the-iteratori-is-placed-on-the-left-of-incan-be-assigned-any-name-you-want-does-not-need-to-be-declared-in-advance.-during-the-execution-of-the-loop-the-iterator-takes-on-the-values-inside-the-vector-which-is-placed-on-the-right-side-of-in.-specifically-the-following-is-happening.the-loop-will-automatically-stop-once-it-reaches-the-last-item-in-the-vector.-the-loop-can-be-stopped-before-that-using-the-break-command.",
-    "href": "posts/logic_loops_functions/index.html#loopsloop-control-is-defined-in-between-the-parentheses-.-the-name-of-the-iteratori-is-placed-on-the-left-of-incan-be-assigned-any-name-you-want-does-not-need-to-be-declared-in-advance.-during-the-execution-of-the-loop-the-iterator-takes-on-the-values-inside-the-vector-which-is-placed-on-the-right-side-of-in.-specifically-the-following-is-happening.the-loop-will-automatically-stop-once-it-reaches-the-last-item-in-the-vector.-the-loop-can-be-stopped-before-that-using-the-break-command.",
-    "title": "Logic, Loops, and Functions",
-    "section": "loops(loop control is defined in between the parentheses (). The name of the iterator(i) is placed on the left of in(can be assigned any name you want, does not need to be declared in advance). During the execution of the loop, the iterator takes on the values inside the vector which is placed on the right side of in. Specifically, the following is happening.The loop will automatically stop once it reaches the last item in the vector. the loop can be stopped before that using the “break” command).",
-    "text": "loops(loop control is defined in between the parentheses (). The name of the iterator(i) is placed on the left of in(can be assigned any name you want, does not need to be declared in advance). During the execution of the loop, the iterator takes on the values inside the vector which is placed on the right side of in. Specifically, the following is happening.The loop will automatically stop once it reaches the last item in the vector. the loop can be stopped before that using the “break” command).\n\nLoop steps: 1. iterator <- vector[1] 2. iterator <- vector[2] 3. iterator <- vector[3] 4. etc.\n\nfor(i in 1:5) {\n  print(\"hello\")\n}\n\n[1] \"hello\"\n[1] \"hello\"\n[1] \"hello\"\n[1] \"hello\"\n[1] \"hello\"\n\n# show the value of i each step of the loop\nfor(i in 1:5) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n# define the vector to loop over in advance\nx <- 1:5\nfor (i in x) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n# reminder that (i) becomes the next value in the vector\nmy_sequence <- c(1, 5, 2, 3, 4)\nfor (i in my_sequence) {\n  print(i)\n}\n\n[1] 1\n[1] 5\n[1] 2\n[1] 3\n[1] 4\n\n# index vector does not need to be numbers\nmy_things <- c(\"A\", \"B\", \"C\", \"D\")\nfor (i in my_things) {\n  print(i)\n}\n\n[1] \"A\"\n[1] \"B\"\n[1] \"C\"\n[1] \"D\""
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#breaking-a-loopbreak-stops-a-loop-used-with-logical-statements-to-define-the-conditions-necessary-to-cause-the-break.",
-    "href": "posts/logic_loops_functions/index.html#breaking-a-loopbreak-stops-a-loop-used-with-logical-statements-to-define-the-conditions-necessary-to-cause-the-break.",
-    "title": "Logic, Loops, and Functions",
-    "section": "breaking a loop(“break” stops a loop; used with logical statements to define the conditions necessary to cause the break).",
-    "text": "breaking a loop(“break” stops a loop; used with logical statements to define the conditions necessary to cause the break).\n\nfor(i in 1:10) {\n  if (i < 5) {\n    print(i)\n  } else{\n    break\n  }\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#while-loopswhile-loops-run-until-a-logical-condition-is-met.-here-there-is-no-iterator-just-a-logic-statement-that-needs-to-be-met.-this-one-prints-i-while-i-is-less-than-6.-as-soon-as-i-becomes-not-less-than-6-then-the-loop-stops.-critically-inside-the-loop-the-value-of-i-increases-each-iteration.",
-    "href": "posts/logic_loops_functions/index.html#while-loopswhile-loops-run-until-a-logical-condition-is-met.-here-there-is-no-iterator-just-a-logic-statement-that-needs-to-be-met.-this-one-prints-i-while-i-is-less-than-6.-as-soon-as-i-becomes-not-less-than-6-then-the-loop-stops.-critically-inside-the-loop-the-value-of-i-increases-each-iteration.",
-    "title": "Logic, Loops, and Functions",
-    "section": "while loops(while loops run until a logical condition is met. Here there is no iterator, just a logic statement that needs to be met. this one prints (i) while (i) is less than 6. as soon as (i) becomes “not less than 6”, then the loop stops. Critically, inside the loop, the value of (i) increases each iteration).",
-    "text": "while loops(while loops run until a logical condition is met. Here there is no iterator, just a logic statement that needs to be met. this one prints (i) while (i) is less than 6. as soon as (i) becomes “not less than 6”, then the loop stops. Critically, inside the loop, the value of (i) increases each iteration).\n\ni <- 1 # create an variable\nwhile (i < 6) {\n  print(i)\n  i <- i + 1 #add one eachs step of the loop\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#repeat-loopssimilar-to-while-but-lets-do-things-until-a-condition-is-met.",
-    "href": "posts/logic_loops_functions/index.html#repeat-loopssimilar-to-while-but-lets-do-things-until-a-condition-is-met.",
-    "title": "Logic, Loops, and Functions",
-    "section": "repeat loops(similar to while, but let’s do things until a condition is met).",
-    "text": "repeat loops(similar to while, but let’s do things until a condition is met).\n\ni <- 0\nrepeat {\n  i <- i + 1\n  print(i)\n  if (i == 5) {\n    break\n  }\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\ni <- 0\nrepeat {\n    i <- i + 1\n    \n    if (i == 5) {\n      break\n    }\n    \n    print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4"
-  },
-  {
-    "objectID": "posts/logic_loops_functions/index.html#examples",
-    "href": "posts/logic_loops_functions/index.html#examples",
-    "title": "Logic, Loops, and Functions",
-    "section": "examples",
-    "text": "examples\n\nfor(i in 1:5) print(i)\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n# put 1 into the first five positions of x\nx <- c() # create empty vector\nfor (i in 1:5) {\n  x[i] <- 1  # assign 1 to the ith slot in x\n}\nx\n\n[1] 1 1 1 1 1\n\n# put the numbers 1-5 in the first 5 positions of x\nx <- c()\nfor (i in 1:5) {\n  x[i] <- i\n}\nx\n\n[1] 1 2 3 4 5\n\na <- c(1, 4, 3, 5, 7, 6, 8, 2)\nodd <- c()\ncounter <- 0\nfor (i in a) {\n# (i) will the values of a in each position\n  counter <- counter + 1\n  if (i %% 2 != 0) {\n    odd[counter] <- \"odd\"\n  } else {\n    odd[counter] <- \"even\"\n  }\n}\nodd\n\n[1] \"odd\"  \"even\" \"odd\"  \"odd\"  \"odd\"  \"even\" \"even\" \"even\"\n\n# an alternative strategy\na <- c(1, 4, 3, 5, 7, 6, 8, 2)\nodd <- c()\n# 1:length(a) creates a sequence from 1 to length\nfor (i in 1:length(a)) {\n  if (a[i] %% 2 != 0) {\n    odd[i] <- \"odd\"\n  } else {\n    odd[i] <- \"even\"\n  }\n}\nodd\n\n[1] \"odd\"  \"even\" \"odd\"  \"odd\"  \"odd\"  \"even\" \"even\" \"even\"\n\n## nesting loops\nfor(i in 1:5) {\n  for (j in 1:5) {\n    print(c(i, j))\n  }\n}\n\n[1] 1 1\n[1] 1 2\n[1] 1 3\n[1] 1 4\n[1] 1 5\n[1] 2 1\n[1] 2 2\n[1] 2 3\n[1] 2 4\n[1] 2 5\n[1] 3 1\n[1] 3 2\n[1] 3 3\n[1] 3 4\n[1] 3 5\n[1] 4 1\n[1] 4 2\n[1] 4 3\n[1] 4 4\n[1] 4 5\n[1] 5 1\n[1] 5 2\n[1] 5 3\n[1] 5 4\n[1] 5 5\n\n# example of using nested loops to fill the contents\nmy_matrix <- matrix(0, ncol = 5, nrow = 5)\nfor (i in 1:5) {\n  for (j in 1:5) {\n    my_matrix[i, j] <- i * j\n  }\n}\nmy_matrix\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    2    3    4    5\n[2,]    2    4    6    8   10\n[3,]    3    6    9   12   15\n[4,]    4    8   12   16   20\n[5,]    5   10   15   20   25\n\n##break exits out of the immediate loop\nsum_of_i_j <- c()\ncounter <- 0\nfor (i in 1:5) {\n  for (j in 1:5) {\n    counter <- counter + 1\n    sum_of_i_j[counter] <- i + j\n    if (i + j > 5) {\n      break\n    }\n  }\n}\nsum_of_i_j\n\n [1] 2 3 4 5 6 3 4 5 6 4 5 6 5 6 6"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/week_12_tidy_tues_1/index.html",
-    "href": "posts/week_12_tidy_tues_1/index.html",
-    "title": "Tidy Tuesday 1",
-    "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n\nlibrary(dplyr)\n\ntuesdata <- tidytuesdayR::tt_load('2023-05-02')\n\n--- Compiling #TidyTuesday Information for 2023-05-02 ----\n--- There are 3 files available ---\nOnly 10 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n--- Starting Download ---\n\n\nOnly 10 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n    Downloading file 1 of 3: `plots.csv`\n\n\nOnly 9 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n    Downloading file 2 of 3: `species.csv`\n\n\nOnly 8 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n    Downloading file 3 of 3: `surveys.csv`\n\n\nOnly 7 Github queries remaining until 2023-05-08 11:56:18 AM EDT.\n\n\n--- Download complete ---\n\nplots <- tuesdata$plots\nspecies <- tuesdata$species\nsurveys <- tuesdata$surveys"
-  },
-  {
-    "objectID": "posts/week_12_tidy_tues_1/index.html#mice-per-year",
-    "href": "posts/week_12_tidy_tues_1/index.html#mice-per-year",
-    "title": "Tidy Tuesday 1",
-    "section": "mice per year",
-    "text": "mice per year\n\nmice_count_by_year<-surveys %>%\n  group_by(year) %>%\n  count()\n\nggplot(mice_count_by_year, aes(x=year, y=n))+\n  geom_line()+\n  geom_point()+\n  ggtitle(\"Mice Count By Year\")+\n  scale_x_continuous(breaks=seq(1980,2020,5))"
-  },
-  {
-    "objectID": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-sex",
-    "href": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-sex",
-    "title": "Tidy Tuesday 1",
-    "section": "mice per year by sex",
-    "text": "mice per year by sex\n\nmice_count_by_year_sex <- surveys %>%\n  group_by(year,sex) %>%\n  count()\nggplot(mice_count_by_year_sex, aes(x= year, y=n, color=sex))+\n  geom_line() +\n  ggtitle(\"Mice count by year and sex\")+\n  scale_x_continuous(breaks=seq(1980,2020,5))"
-  },
-  {
-    "objectID": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-species",
-    "href": "posts/week_12_tidy_tues_1/index.html#mice-per-year-by-species",
-    "title": "Tidy Tuesday 1",
-    "section": "mice per year by species",
-    "text": "mice per year by species\n\nmice_count_by_year_species <- surveys %>%\n  group_by(year,species) %>%\n  count()\n\nggplot(mice_count_by_year_species, aes(x=year, \n                                       y=n,\n                                       color=species,\n                                       linetype=species))+\n  geom_line()+\n  ggtitle(\"Mice Count By Year\")+\n  scale_x_continuous(breaks=seq(1980,2020,5))"
-  },
-  {
-    "objectID": "posts/week_9_report/index.html",
-    "href": "posts/week_9_report/index.html",
-    "title": "Week 9 Report",
-    "section": "",
-    "text": "#load libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.0     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.1     ✔ tibble    3.1.8\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the \u001b]8;;http://conflicted.r-lib.org/\u0007conflicted package\u001b]8;;\u0007 to force all conflicts to become errors\n\n#load the data\nreview_data <- rio::import(\"data_report/review_data.csv\")"
-  },
-  {
-    "objectID": "posts/week_9_report/index.html#number-of-reviews-by-year",
-    "href": "posts/week_9_report/index.html#number-of-reviews-by-year",
-    "title": "Week 9 Report",
-    "section": "number of reviews by year",
-    "text": "number of reviews by year"
-  },
-  {
-    "objectID": "posts/week_9_report/index.html#verified-usersthe-dataset-contains-details-of-whether-the-review-was-based-on-a-verified-purchase-from-amazon-community",
-    "href": "posts/week_9_report/index.html#verified-usersthe-dataset-contains-details-of-whether-the-review-was-based-on-a-verified-purchase-from-amazon-community",
-    "title": "Week 9 Report",
-    "section": "verified users(the dataset contains details of whether the review was based on a verified purchase, from Amazon Community)",
-    "text": "verified users(the dataset contains details of whether the review was based on a verified purchase, from Amazon Community)\n\n\n\n\nTable 1: Number of reviews by purchase status\n\n\nverified\ncounts\n\n\n\n\nFALSE\n164932\n\n\nTRUE\n332645"
-  },
-  {
-    "objectID": "posts/week_9_report/index.html#number-of-reviews-per-year",
-    "href": "posts/week_9_report/index.html#number-of-reviews-per-year",
-    "title": "Week 9 Report",
-    "section": "number of reviews per year",
-    "text": "number of reviews per year\n\n\n`summarise()` has grouped output by 'year'. You can override using the\n`.groups` argument."
-  },
-  {
-    "objectID": "posts/week_9_report/index.html#number-of-reviews-per-rating",
-    "href": "posts/week_9_report/index.html#number-of-reviews-per-rating",
-    "title": "Week 9 Report",
-    "section": "number of reviews per rating",
-    "text": "number of reviews per rating"
-  },
-  {
-    "objectID": "posts/week_9_report/index.html#number-of-reviews-per-year-1",
-    "href": "posts/week_9_report/index.html#number-of-reviews-per-year-1",
-    "title": "Week 9 Report",
-    "section": "number of reviews per year",
-    "text": "number of reviews per year\n\n#Get number of reviews per year\n\nrating_by_verified_counts <- review_data %>%\n  group_by(rating,verified) %>%\n  summarize(counts = n())\n\n`summarise()` has grouped output by 'rating'. You can override using the\n`.groups` argument.\n\n#ggplot(data = reviews_by_year, mapping = aes(x=year, y=counts))\n#ggplot(reviews_by_year, aes(x=year, y=counts))\n\n# plot\nggplot(data = rating_by_verified_counts, \n       mapping = aes(x=rating, \n                     y=counts, \n                     group = verified,\n                     fill = verified))+\n  geom_bar(stat= \"identity\", position = \"dodge\")+\n  xlab(\"\")+\n  ylab(\"\")+\n  ggtitle(\"Review Ratings\",\n          subtitle = \"By purchase status\")+\n  theme(\n    panel.background = element_rect(fill = \"lightgrey\",\n                                colour = \"lightgrey\",\n                                linewidth = 0.5, linetype = \"solid\"),\n    panel.grid.major=element_line(colour=\"black\",linewidth = .05),\n    panel.grid.minor=element_line(colour=\"lightgrey\"))"
-  },
-  {
-    "objectID": "posts/week_12/index.html",
-    "href": "posts/week_12/index.html",
-    "title": "Week 12",
-    "section": "",
-    "text": "library(tidyverse)   # data wrangling functions\nlibrary(ggthemes)    # for themes\nlibrary(patchwork)   # for combining plots\nlibrary(plotly)      # for interactive plots\n# devtools::install_github(\"hrbrmstr/waffle\")\nlibrary(waffle)      # for waffle plots\nlibrary(ggbump)      # for bump plots\nlibrary(treemap)     # for treemap plots\nlibrary(ggwordcloud) # for word clouds\nlibrary(tidytext)    # for manipulating text for word clouds\nlibrary(sf)          # for mapping geoms\nlibrary(rnaturalearth) # for map data\nlibrary(rnaturalearthdata) # extra mapping data\nlibrary(gganimate)   # for animated plots\n\ntheme_set(theme_light())"
-  },
-  {
-    "objectID": "posts/week_12/index.html#annotations",
-    "href": "posts/week_12/index.html#annotations",
-    "title": "Week 12",
-    "section": "annotations",
-    "text": "annotations\n\nbar +\n  # add left-justified text to the second bar\n  annotate(geom = \"text\",\n           label = \"Our goal is to\\nreduce this\\ncategory\",\n           x = 1.65, y = 150,\n           hjust = 0, vjust = 1, \n           color = \"white\", fontface = \"bold\",\n           angle = 45) +\n  # add a centred label to the third bar\n  annotate(geom = \"label\",\n           label = \"Our goal is\\nto increase this\\ncategory\",\n           x = 3, y = 75,\n           hjust = 0.5, vjust = 1, \n           color = \" darkturquoise\", fontface = \"bold\")\n\n\npoint +\n  # add a rectangle surrounding long call times\n  annotate(geom = \"rect\",\n           xmin = 100, xmax = 275,\n           ymin = 140, ymax = 180,\n           fill = \"transparent\", color = \"red\") +\n  # add a text label\n  annotate(\"text\",\n           x = 260, y = 120,\n           label = \"outliers\") +\n  # add an line with an arrow from the text to the box\n  annotate(geom = \"segment\", \n           x = 240, y = 120, \n           xend = 200, yend = 135,\n           arrow = arrow(length = unit(0.5, \"lines\"))) +\n  # add a curved line with an arrow \n  # from the text to a wait time outlier\n  annotate(geom = \"curve\", \n          x = 280, y = 120, \n          xend = 320, yend = 45,\n          curvature = -0.5,\n          arrow = arrow(length = unit(0.5, \"lines\")))"
-  },
-  {
-    "objectID": "posts/week_12/index.html#other-plots",
-    "href": "posts/week_12/index.html#other-plots",
-    "title": "Week 12",
-    "section": "other plots",
-    "text": "other plots\n\nsurvey_data <- read_csv(file = \"data/survey_data.csv\",\n                        show_col_types = FALSE)\n\nggplot(survey_data, aes(x = wait_time)) +\n  geom_histogram()\n\n\nggplot(survey_data, aes(x = wait_time)) +\n  scale_x_continuous(name = \"Wait time (seconds)\",\n                     breaks = seq(0, 600, 60)) +\n  geom_freqpoly(boundary = 0, binwidth = 15, \n                color = \"black\")\n\n\nggplot(survey_data, aes(x = wait_time)) +\n  scale_x_continuous(name = \"Wait time (seconds)\",\n                     breaks = seq(0, 600, 60)) +\n  geom_density(fill = \"purple\", color = \"black\")"
-  },
-  {
-    "objectID": "posts/week_12/index.html#interactive-plots",
-    "href": "posts/week_12/index.html#interactive-plots",
-    "title": "Week 12",
-    "section": "interactive plots",
-    "text": "interactive plots\n\nggplotly(point)\n\n\ndevtools::install_github(\"hrbrmstr/waffle\")"
-  },
-  {
     "objectID": "posts/midterm_part_2/index.html#do-simple-math-with-numbers-addition-subtraction-multiplication-division",
     "href": "posts/midterm_part_2/index.html#do-simple-math-with-numbers-addition-subtraction-multiplication-division",
     "title": "Midterm Part 2",
@@ -333,21 +53,21 @@
     "href": "posts/midterm_part_2/index.html#generate-100-random-numbers",
     "title": "Midterm Part 2",
     "section": "generate 100 random numbers",
-    "text": "generate 100 random numbers\n\n# using the runif function\nrand_nums <- runif(100)\n\nprint(rand_nums)\n\n  [1] 0.537392160 0.381179022 0.113398973 0.974760720 0.093327996 0.901190103\n  [7] 0.529180399 0.448824899 0.635544255 0.351170922 0.549191403 0.585270015\n [13] 0.907362988 0.721227803 0.016722095 0.069109890 0.442123420 0.269403039\n [19] 0.974533267 0.900471758 0.648048777 0.880047734 0.898907208 0.463053815\n [25] 0.927050439 0.636372252 0.062198963 0.869094931 0.209317259 0.407079123\n [31] 0.991599716 0.971994986 0.352060219 0.456773935 0.087728833 0.798727108\n [37] 0.644973734 0.802463866 0.885654693 0.650576136 0.862418580 0.126974812\n [43] 0.398222953 0.197290575 0.316844648 0.004392612 0.002827291 0.575859059\n [49] 0.622502246 0.709783277 0.445219987 0.133216562 0.999724193 0.010541799\n [55] 0.647719056 0.361398346 0.532331097 0.806898296 0.524515020 0.185222841\n [61] 0.186139207 0.388778531 0.053053949 0.274274201 0.589779013 0.014378782\n [67] 0.763342604 0.263173729 0.879450649 0.694881904 0.309386540 0.494669121\n [73] 0.382545028 0.868809687 0.851629490 0.186799904 0.636102591 0.955198377\n [79] 0.099587729 0.151482880 0.880414376 0.760537803 0.367160266 0.912775295\n [85] 0.928703013 0.892028503 0.091870700 0.310125761 0.496322671 0.451077587\n [91] 0.637056102 0.463130089 0.671893928 0.330047243 0.455739512 0.857025319\n [97] 0.487496559 0.695552390 0.476932811 0.104413666\n\n# using the rnorm function\nrandom_numbers <- rnorm(100, mean = 0, sd = 1)\n\nprint(random_numbers)\n\n  [1]  2.769032530 -0.052834311  0.228279753  1.076795472  0.720458283\n  [6]  0.480475861  0.490929975  0.637772879 -2.007600177 -0.297893154\n [11]  1.158693768  1.372720659  0.525846782 -0.129452588 -1.415120189\n [16]  0.049951473  0.439976174 -0.711194279  1.635020774  0.551863459\n [21] -0.335710799 -0.059214435  1.852050220  0.716786564  1.023260566\n [26]  1.224081536 -0.215587485  0.434655344  0.354981339 -1.936774018\n [31]  0.806362535  1.400794691  0.827339615  0.006488173 -1.811875679\n [36] -0.413471637 -0.552497503 -0.052271599 -0.140694451  0.831273086\n [41]  0.795315835  0.639430231  0.410287221  0.792473654  0.688611669\n [46] -1.015276260  1.186296062 -1.375890886  0.652751744  0.891138828\n [51] -0.573675518 -0.537919735  0.477620076  0.585538979 -1.741861141\n [56]  0.314716548 -0.930067889 -2.017124306  1.444913377  1.236833821\n [61] -1.329502965  1.434264950  0.425161737  0.109302103 -1.256857535\n [66] -0.707681029  1.068602929 -0.668234504  1.574198220 -0.124918767\n [71] -0.574641809 -0.979798479 -0.205011092 -0.370414536  0.710356825\n [76] -0.588141523  0.997284545  0.217779477  0.334395647  0.614286929\n [81] -0.039553617  0.622449447  0.403397588  0.027958800  0.708706174\n [86]  0.830397225  0.456367353  0.322102026 -1.140156446 -1.020479576\n [91]  0.720200566 -0.250283196  0.976325516  1.480212827 -0.250886229\n [96]  0.540197763  0.524467395 -1.423432994 -0.407361596  0.379118833"
+    "text": "generate 100 random numbers\n\n# using the runif function\nrand_nums <- runif(100)\n\nprint(rand_nums)\n\n  [1] 0.005036079 0.183540743 0.732061430 0.190197325 0.982033398 0.650855637\n  [7] 0.140457187 0.290214743 0.725291067 0.430917046 0.746215438 0.970684306\n [13] 0.168505982 0.526821824 0.322396871 0.586817303 0.753894415 0.926960395\n [19] 0.329169395 0.820941705 0.001328728 0.030984927 0.246837437 0.994543774\n [25] 0.197898575 0.146857957 0.836298078 0.326387671 0.811638942 0.899980579\n [31] 0.924762965 0.263938694 0.835922996 0.755399099 0.117687644 0.355732274\n [37] 0.149023176 0.567827332 0.870785077 0.052274175 0.529308351 0.372509911\n [43] 0.177223266 0.026269958 0.100971707 0.536750339 0.924841949 0.801686800\n [49] 0.193780965 0.788514342 0.398244164 0.402856824 0.605296635 0.537880391\n [55] 0.653524098 0.316191732 0.649009550 0.156269323 0.851423515 0.809580794\n [61] 0.605258807 0.744163417 0.902414100 0.707983547 0.602795832 0.592788455\n [67] 0.801851704 0.438512736 0.453053227 0.444753316 0.862944385 0.233565557\n [73] 0.188044642 0.911586275 0.394208783 0.029495567 0.702412155 0.329304958\n [79] 0.035801875 0.524670582 0.593859415 0.274145170 0.833163826 0.061500105\n [85] 0.371182435 0.067870491 0.982486140 0.859296277 0.219521618 0.312666572\n [91] 0.895780546 0.328394203 0.653362148 0.603529659 0.531882714 0.004475989\n [97] 0.500049418 0.729731611 0.095649101 0.846347350\n\n# using the rnorm function\nrandom_numbers <- rnorm(100, mean = 0, sd = 1)\n\nprint(random_numbers)\n\n  [1]  0.50092717 -0.72164660  0.18222549 -1.26571009  1.12250704 -0.44329990\n  [7]  0.58727553  0.44800662  1.37815949  1.63430941 -0.94526845  0.58890578\n [13] -0.22510236  0.52331719 -0.62751175  0.74914946 -0.97275937 -0.22657330\n [19] -0.42391860 -0.31423020  0.96472079 -0.47032854 -1.66660589  1.30256112\n [25]  0.97974190 -0.43485473 -2.07383540 -0.12226294 -0.27801247 -1.28967883\n [31]  0.74007018 -0.11931701  0.74227760  0.57853745 -0.90368934  0.42606938\n [37] -1.69257894 -1.06374508  0.14910517 -0.71609516  1.19634537 -0.56085194\n [43]  0.09934933  0.22497702  0.08767354 -1.12747407 -1.63174191 -2.28593028\n [49]  0.91643390  0.64302922 -0.33882949 -0.30899657  0.12542079 -1.08744619\n [55]  1.86379827 -0.05960517  0.83090871  0.68932984  1.29567996 -2.39685145\n [61] -2.67457759 -0.59889478  0.56961241  1.40078491 -0.80683885  0.67539990\n [67]  0.04753137 -0.76168377  0.00382858  1.38138811  0.66190632  0.62258301\n [73] -0.06982588 -0.65399882  1.15377707  0.76944950  0.05079102 -1.64269750\n [79]  1.17883229 -0.39428330 -0.05896240  0.06441911  2.15383188  0.03704991\n [85]  1.72221564  0.13556832  1.27040300 -1.07532423 -1.39539891 -1.43662199\n [91] -2.56049865  0.54199732  0.10811705  0.47095589  1.17126366 -0.39678954\n [97] -0.10352434 -0.15012162 -2.56628511 -0.73518944"
   },
   {
     "objectID": "posts/midterm_part_2/index.html#generate-100-random-numbers-within-a-specific-range",
     "href": "posts/midterm_part_2/index.html#generate-100-random-numbers-within-a-specific-range",
     "title": "Midterm Part 2",
     "section": "generate 100 random numbers within a specific range",
-    "text": "generate 100 random numbers within a specific range\n\n# example 1\nrandom_numbers <- runif(100, min = 0, max = 1)\n\nprint(random_numbers)\n\n  [1] 0.6618774638 0.0825588885 0.4808186272 0.2850932614 0.4393222593\n  [6] 0.0709930270 0.9007767797 0.9037743988 0.0650724238 0.7354078882\n [11] 0.5739673213 0.4567766839 0.3892955224 0.3051117114 0.9949570361\n [16] 0.6261569641 0.8603636753 0.0326102264 0.8136143221 0.3885573482\n [21] 0.8286615887 0.8853885334 0.6964525713 0.8885879803 0.0623804294\n [26] 0.2611310009 0.8112006374 0.1536685955 0.1631412734 0.2673654086\n [31] 0.1202295041 0.7190573262 0.4178310032 0.2959203492 0.6757242789\n [36] 0.3795058283 0.8972520733 0.8815136671 0.6246562058 0.9997801920\n [41] 0.9044869281 0.7260065172 0.4430923150 0.2133538853 0.7441003891\n [46] 0.7180105553 0.5021286253 0.0115388590 0.2178466513 0.5389892056\n [51] 0.2294833602 0.8885815684 0.6816119661 0.3313937427 0.2115073884\n [56] 0.6469147238 0.5286242415 0.4952224763 0.7775625726 0.1293347757\n [61] 0.0002599829 0.6219817912 0.7292633792 0.7263742283 0.0241404343\n [66] 0.3716499524 0.1681278152 0.0656609375 0.9557223152 0.5486943966\n [71] 0.1633711024 0.6168260933 0.2423159576 0.5892196007 0.9771701826\n [76] 0.6254412956 0.3539273001 0.3363434665 0.3822676111 0.5215425950\n [81] 0.9441126913 0.4299538473 0.5317686961 0.6697443158 0.1289668060\n [86] 0.9212081002 0.5461372233 0.6927577523 0.9063330756 0.4078946847\n [91] 0.5830422665 0.9945663996 0.6599046420 0.9211726282 0.3722742533\n [96] 0.7789323055 0.4197965285 0.3926534245 0.3493199616 0.2349970599\n\n# example 2\nrandom_numbers <- runif(100, min = 10, max = 85)\n\nprint(random_numbers)\n\n  [1] 16.72110 26.66261 67.81397 67.47033 58.62791 73.41388 15.15571 50.39444\n  [9] 58.26884 66.79678 84.83469 58.15906 66.59881 82.33287 28.24554 24.87615\n [17] 20.45969 60.76392 64.98797 70.90830 13.05080 11.46182 17.57352 53.84042\n [25] 40.17914 56.23322 15.87390 39.80567 24.27425 43.15309 34.75498 52.02834\n [33] 37.19807 30.62056 52.02106 64.46380 10.06162 70.60802 10.42587 29.60432\n [41] 78.76778 80.58548 69.90436 78.35281 31.99873 71.51949 72.23237 14.83061\n [49] 81.55508 80.68070 32.57603 68.79264 82.12354 69.52098 36.94138 68.83213\n [57] 53.81891 12.08001 39.71449 33.89305 49.81780 45.51690 32.27094 77.99559\n [65] 52.55767 75.58676 26.60948 84.32248 39.78180 16.57906 25.86080 77.73124\n [73] 21.40431 76.67366 19.15932 30.10080 44.70707 75.82822 15.97047 11.52975\n [81] 35.07488 64.74885 35.45793 11.60888 54.95427 14.50651 29.49464 68.09874\n [89] 45.05434 80.79586 42.17472 63.05162 48.46376 71.91776 60.06925 61.26093\n [97] 65.75555 40.65798 26.52919 12.15700"
+    "text": "generate 100 random numbers within a specific range\n\n# example 1\nrandom_numbers <- runif(100, min = 0, max = 1)\n\nprint(random_numbers)\n\n  [1] 0.59712401 0.58058179 0.53759636 0.87305305 0.91932771 0.84811133\n  [7] 0.63441629 0.22349554 0.32139707 0.14988524 0.22693544 0.82824488\n [13] 0.55854381 0.33152966 0.53096108 0.71418348 0.59565259 0.52281906\n [19] 0.51816186 0.03835797 0.93640382 0.74352076 0.89860841 0.38451214\n [25] 0.16534128 0.35760759 0.36393783 0.26622037 0.46389721 0.03521962\n [31] 0.90964114 0.14964462 0.51138228 0.27886819 0.87379343 0.04714255\n [37] 0.70089400 0.65801689 0.97308181 0.61814427 0.04291832 0.43429654\n [43] 0.20623507 0.95946963 0.98602956 0.74709343 0.75805080 0.30267278\n [49] 0.24280921 0.40306419 0.26959395 0.68158151 0.34845527 0.14049783\n [55] 0.06539532 0.82431823 0.98423139 0.34284012 0.29330486 0.87336733\n [61] 0.97985745 0.67590122 0.26398151 0.48055508 0.37830370 0.17374392\n [67] 0.98301064 0.74842178 0.62053946 0.34013331 0.43561124 0.51168296\n [73] 0.51098431 0.39758545 0.49878033 0.35993092 0.75066806 0.73614343\n [79] 0.65385458 0.23987642 0.07075231 0.42341117 0.81271274 0.08468675\n [85] 0.51949145 0.31017443 0.74527249 0.53790404 0.37490041 0.30186603\n [91] 0.45965049 0.53146770 0.21534394 0.59273962 0.79047139 0.49634919\n [97] 0.24147527 0.44026154 0.21983773 0.66651646\n\n# example 2\nrandom_numbers <- runif(100, min = 10, max = 85)\n\nprint(random_numbers)\n\n  [1] 64.65240 36.25086 73.66394 13.52213 29.91597 13.89818 33.20226 69.69939\n  [9] 67.77679 66.38634 81.12249 74.38148 34.46445 37.92923 17.37680 23.01795\n [17] 73.51589 82.04072 77.19517 50.70852 41.20762 40.14262 13.43471 79.84402\n [25] 45.13884 14.62102 16.39487 36.04026 26.38426 27.85634 68.64394 76.14605\n [33] 64.21678 16.78377 71.19765 45.47659 45.10325 40.06413 31.69710 74.64906\n [41] 47.32565 27.80933 36.71329 16.46837 49.51981 13.71022 51.24088 37.30315\n [49] 70.42618 75.72347 39.91727 30.82179 37.70927 79.26537 43.37546 80.82352\n [57] 26.25631 78.09199 80.86859 59.13789 68.55911 18.40615 33.46637 14.94283\n [65] 30.13577 34.88134 33.04043 25.96393 82.70530 38.77765 71.39840 24.61482\n [73] 50.08263 42.92718 79.10827 31.84627 49.17656 35.07062 77.17618 51.20359\n [81] 25.33663 46.43443 43.65259 29.97668 34.26658 52.28467 47.19197 29.25908\n [89] 34.16286 20.63286 70.70294 73.43893 47.37362 80.38742 17.32336 65.07119\n [97] 75.53205 29.42248 28.37177 51.33372"
   },
   {
     "objectID": "posts/midterm_part_2/index.html#write-your-own-functions-to-give-descriptive-statistics-for-a-vector-variable-storing-multiple-numbers.-write-functions-for-the-following-without-using-r-intrinsics-mean-mode-median-range-standard-deviation",
     "href": "posts/midterm_part_2/index.html#write-your-own-functions-to-give-descriptive-statistics-for-a-vector-variable-storing-multiple-numbers.-write-functions-for-the-following-without-using-r-intrinsics-mean-mode-median-range-standard-deviation",
     "title": "Midterm Part 2",
     "section": "write your own functions to give descriptive statistics for a vector variable storing multiple numbers. Write functions for the following without using R intrinsics: mean, mode, median, range, standard deviation",
-    "text": "write your own functions to give descriptive statistics for a vector variable storing multiple numbers. Write functions for the following without using R intrinsics: mean, mode, median, range, standard deviation\n\n## example 1\n# mean\nmy_mean <- function(x) {\n  sum(x)/length(x)\n}\n\n# mode\nmy_mode <- function(x) {\n  table_x <- table(x)\n  names(table_x)[table_x == max(table_x)]\n}\n\n# median\nmy_median <- function(x) {\n  n <- length(x)\n  if (n %% 2 == 0) {\n    median <- (sort(x)[n/2] + sort(x)[n/2 + 1])/2\n  } else {\n    median <- sort(x)[(n + 1)/2]\n  }\n  median\n}\n\n# range\nmy_range <- function(x) {\n  max(x) - min(x)\n}\n\n# standard deviation\nmy_sd <- function(x) {\n  n <- length(x)\n  mean_x <- my_mean(x)\n  sqrt(sum((x - mean_x)^2)/(n - 1))\n}\n\n## example 2 \nx <- rnorm(10)\n\nmean_x <- my_mean(x)\nmode_x <- my_mode(x)\nmedian_x <- my_median(x)\nrange_x <- my_range(x)\nsd_x <- my_sd(x)\n\nprint(mean_x)\n\n[1] 0.1549795\n\nprint(mode_x)\n\n [1] \"-1.10914880500174\"   \"-0.76383873635224\"   \"-0.612945657666588\" \n [4] \"-0.0431834087558775\" \"0.0292484062899891\"  \"0.0300428287841425\" \n [7] \"0.71048154324384\"    \"1.01695256984895\"    \"1.07004361867346\"   \n[10] \"1.22214311566423\"   \n\nprint(median_x)\n\n[1] 0.02964562\n\nprint(range_x)\n\n[1] 2.331292\n\nprint(sd_x)\n\n[1] 0.8253217"
+    "text": "write your own functions to give descriptive statistics for a vector variable storing multiple numbers. Write functions for the following without using R intrinsics: mean, mode, median, range, standard deviation\n\n## example 1\n# mean\nmy_mean <- function(x) {\n  sum(x)/length(x)\n}\n\n# mode\nmy_mode <- function(x) {\n  table_x <- table(x)\n  names(table_x)[table_x == max(table_x)]\n}\n\n# median\nmy_median <- function(x) {\n  n <- length(x)\n  if (n %% 2 == 0) {\n    median <- (sort(x)[n/2] + sort(x)[n/2 + 1])/2\n  } else {\n    median <- sort(x)[(n + 1)/2]\n  }\n  median\n}\n\n# range\nmy_range <- function(x) {\n  max(x) - min(x)\n}\n\n# standard deviation\nmy_sd <- function(x) {\n  n <- length(x)\n  mean_x <- my_mean(x)\n  sqrt(sum((x - mean_x)^2)/(n - 1))\n}\n\n## example 2 \nx <- rnorm(10)\n\nmean_x <- my_mean(x)\nmode_x <- my_mode(x)\nmedian_x <- my_median(x)\nrange_x <- my_range(x)\nsd_x <- my_sd(x)\n\nprint(mean_x)\n\n[1] 0.8561326\n\nprint(mode_x)\n\n [1] \"-1.5638899693212\"   \"-0.512128035979204\" \"0.266670602476026\" \n [4] \"0.718449597576394\"  \"0.753761665464266\"  \"1.17639548926585\"  \n [7] \"1.44025771537439\"   \"1.83949996991032\"   \"2.09498024835513\"  \n[10] \"2.34732860067887\"  \n\nprint(median_x)\n\n[1] 0.9650786\n\nprint(range_x)\n\n[1] 3.911219\n\nprint(sd_x)\n\n[1] 1.214484"
   },
   {
     "objectID": "posts/midterm_part_2/index.html#count-the-number-of-characters-in-a-string-variable",
@@ -389,14 +109,14 @@
     "href": "posts/midterm_part_2/index.html#measure-how-long-a-piece-of-code-takes-to-run-by-measuring-the-time-before-the-code-is-run-and-after-the-code-is-run-and-taking-the-difference-to-find-the-total-time",
     "title": "Midterm Part 2",
     "section": "measure how long a piece of code takes to run by measuring the time before the code is run, and after the code is run, and taking the difference to find the total time",
-    "text": "measure how long a piece of code takes to run by measuring the time before the code is run, and after the code is run, and taking the difference to find the total time\n\nstart_time <- Sys.time()\n\nfor(i in 1:100000){\n  sqrt(i)\n}\n\nend_time <- Sys.time()\n\ntotal_time <- end_time - start_time\ntotal_time\n\nTime difference of 0.006674051 secs"
+    "text": "measure how long a piece of code takes to run by measuring the time before the code is run, and after the code is run, and taking the difference to find the total time\n\nstart_time <- Sys.time()\n\nfor(i in 1:100000){\n  sqrt(i)\n}\n\nend_time <- Sys.time()\n\ntotal_time <- end_time - start_time\ntotal_time\n\nTime difference of 0.007119894 secs"
   },
   {
     "objectID": "posts/midterm_part_2/index.html#read-a-.txt-file-or-.csv-file-into-a-variable",
     "href": "posts/midterm_part_2/index.html#read-a-.txt-file-or-.csv-file-into-a-variable",
     "title": "Midterm Part 2",
     "section": "read a .txt file or .csv file into a variable",
-    "text": "read a .txt file or .csv file into a variable\n\n# using the read.csv function\nmydata <- read.csv(\"matrix.csv\")"
+    "text": "read a .txt file or .csv file into a variable\n\n# using the read.csv function\nmydata <- read.csv(\"matrix.csv\")\n\nWarning in file(file, \"rt\"): cannot open file 'matrix.csv': No such file or\ndirectory\n\n\nError in file(file, \"rt\"): cannot open the connection"
   },
   {
     "objectID": "posts/midterm_part_2/index.html#create-a-variable-that-stores-a-20x20-matrix-of-random-numbers",
@@ -445,6 +165,20 @@
     "href": "index.html",
     "title": "AlbinaQuartoBlog",
     "section": "",
-    "text": "Logic, Loops, and Functions\n\n\n\n\n\n\n\n\n\n\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday 2\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday 1\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 11\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nApr 24, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9 Report\n\n\n\n\n\n\n\nreport\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMidterm Part 1\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nWeek 3\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 12\n\n\n\n\n\n\n\nfinal project example\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMidterm Part 2\n\n\n\n\n\n\n\nMidterm\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntip sheet\n\n\n\n\n\n\n\ntips\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nAlbina Music\n\n\n\n\n\n\nNo matching items"
+    "text": "Logic, Loops, and Functions\n\n\n\n\n\n\n\n\n\n\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 13\n\n\n\n\n\n\n\n\n\n\n\n\nMay 8, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday 2\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday 1\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 11\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nApr 24, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9 Report\n\n\n\n\n\n\n\nreport\n\n\n\n\n\n\n\n\n\n\n\nMar 29, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMidterm Part 1\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nWeek 3\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 12\n\n\n\n\n\n\n\nfinal project example\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMidterm Part 2\n\n\n\n\n\n\n\nMidterm\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\n\n\n\n\n\nqmd notes\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2023\n\n\nAlbina Music\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 15, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntip sheet\n\n\n\n\n\n\n\ntips\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nAlbina Music\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/week_13/index.html#slide-1",
+    "href": "posts/week_13/index.html#slide-1",
+    "title": "Week 13",
+    "section": "Slide 1",
+    "text": "Slide 1\n\nstuff\nstuff"
+  },
+  {
+    "objectID": "posts/week_13/index.html#slide-2",
+    "href": "posts/week_13/index.html#slide-2",
+    "title": "Week 13",
+    "section": "Slide 2",
+    "text": "Slide 2\n\nstuff\nstuff"
   }
 ]

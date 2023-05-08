@@ -647,49 +647,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(rand_nums)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] 0.537392160 0.381179022 0.113398973 0.974760720 0.093327996 0.901190103
-  [7] 0.529180399 0.448824899 0.635544255 0.351170922 0.549191403 0.585270015
- [13] 0.907362988 0.721227803 0.016722095 0.069109890 0.442123420 0.269403039
- [19] 0.974533267 0.900471758 0.648048777 0.880047734 0.898907208 0.463053815
- [25] 0.927050439 0.636372252 0.062198963 0.869094931 0.209317259 0.407079123
- [31] 0.991599716 0.971994986 0.352060219 0.456773935 0.087728833 0.798727108
- [37] 0.644973734 0.802463866 0.885654693 0.650576136 0.862418580 0.126974812
- [43] 0.398222953 0.197290575 0.316844648 0.004392612 0.002827291 0.575859059
- [49] 0.622502246 0.709783277 0.445219987 0.133216562 0.999724193 0.010541799
- [55] 0.647719056 0.361398346 0.532331097 0.806898296 0.524515020 0.185222841
- [61] 0.186139207 0.388778531 0.053053949 0.274274201 0.589779013 0.014378782
- [67] 0.763342604 0.263173729 0.879450649 0.694881904 0.309386540 0.494669121
- [73] 0.382545028 0.868809687 0.851629490 0.186799904 0.636102591 0.955198377
- [79] 0.099587729 0.151482880 0.880414376 0.760537803 0.367160266 0.912775295
- [85] 0.928703013 0.892028503 0.091870700 0.310125761 0.496322671 0.451077587
- [91] 0.637056102 0.463130089 0.671893928 0.330047243 0.455739512 0.857025319
- [97] 0.487496559 0.695552390 0.476932811 0.104413666</code></pre>
+<pre><code>  [1] 0.005036079 0.183540743 0.732061430 0.190197325 0.982033398 0.650855637
+  [7] 0.140457187 0.290214743 0.725291067 0.430917046 0.746215438 0.970684306
+ [13] 0.168505982 0.526821824 0.322396871 0.586817303 0.753894415 0.926960395
+ [19] 0.329169395 0.820941705 0.001328728 0.030984927 0.246837437 0.994543774
+ [25] 0.197898575 0.146857957 0.836298078 0.326387671 0.811638942 0.899980579
+ [31] 0.924762965 0.263938694 0.835922996 0.755399099 0.117687644 0.355732274
+ [37] 0.149023176 0.567827332 0.870785077 0.052274175 0.529308351 0.372509911
+ [43] 0.177223266 0.026269958 0.100971707 0.536750339 0.924841949 0.801686800
+ [49] 0.193780965 0.788514342 0.398244164 0.402856824 0.605296635 0.537880391
+ [55] 0.653524098 0.316191732 0.649009550 0.156269323 0.851423515 0.809580794
+ [61] 0.605258807 0.744163417 0.902414100 0.707983547 0.602795832 0.592788455
+ [67] 0.801851704 0.438512736 0.453053227 0.444753316 0.862944385 0.233565557
+ [73] 0.188044642 0.911586275 0.394208783 0.029495567 0.702412155 0.329304958
+ [79] 0.035801875 0.524670582 0.593859415 0.274145170 0.833163826 0.061500105
+ [85] 0.371182435 0.067870491 0.982486140 0.859296277 0.219521618 0.312666572
+ [91] 0.895780546 0.328394203 0.653362148 0.603529659 0.531882714 0.004475989
+ [97] 0.500049418 0.729731611 0.095649101 0.846347350</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using the rnorm function</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>random_numbers <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(random_numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1]  2.769032530 -0.052834311  0.228279753  1.076795472  0.720458283
-  [6]  0.480475861  0.490929975  0.637772879 -2.007600177 -0.297893154
- [11]  1.158693768  1.372720659  0.525846782 -0.129452588 -1.415120189
- [16]  0.049951473  0.439976174 -0.711194279  1.635020774  0.551863459
- [21] -0.335710799 -0.059214435  1.852050220  0.716786564  1.023260566
- [26]  1.224081536 -0.215587485  0.434655344  0.354981339 -1.936774018
- [31]  0.806362535  1.400794691  0.827339615  0.006488173 -1.811875679
- [36] -0.413471637 -0.552497503 -0.052271599 -0.140694451  0.831273086
- [41]  0.795315835  0.639430231  0.410287221  0.792473654  0.688611669
- [46] -1.015276260  1.186296062 -1.375890886  0.652751744  0.891138828
- [51] -0.573675518 -0.537919735  0.477620076  0.585538979 -1.741861141
- [56]  0.314716548 -0.930067889 -2.017124306  1.444913377  1.236833821
- [61] -1.329502965  1.434264950  0.425161737  0.109302103 -1.256857535
- [66] -0.707681029  1.068602929 -0.668234504  1.574198220 -0.124918767
- [71] -0.574641809 -0.979798479 -0.205011092 -0.370414536  0.710356825
- [76] -0.588141523  0.997284545  0.217779477  0.334395647  0.614286929
- [81] -0.039553617  0.622449447  0.403397588  0.027958800  0.708706174
- [86]  0.830397225  0.456367353  0.322102026 -1.140156446 -1.020479576
- [91]  0.720200566 -0.250283196  0.976325516  1.480212827 -0.250886229
- [96]  0.540197763  0.524467395 -1.423432994 -0.407361596  0.379118833</code></pre>
+<pre><code>  [1]  0.50092717 -0.72164660  0.18222549 -1.26571009  1.12250704 -0.44329990
+  [7]  0.58727553  0.44800662  1.37815949  1.63430941 -0.94526845  0.58890578
+ [13] -0.22510236  0.52331719 -0.62751175  0.74914946 -0.97275937 -0.22657330
+ [19] -0.42391860 -0.31423020  0.96472079 -0.47032854 -1.66660589  1.30256112
+ [25]  0.97974190 -0.43485473 -2.07383540 -0.12226294 -0.27801247 -1.28967883
+ [31]  0.74007018 -0.11931701  0.74227760  0.57853745 -0.90368934  0.42606938
+ [37] -1.69257894 -1.06374508  0.14910517 -0.71609516  1.19634537 -0.56085194
+ [43]  0.09934933  0.22497702  0.08767354 -1.12747407 -1.63174191 -2.28593028
+ [49]  0.91643390  0.64302922 -0.33882949 -0.30899657  0.12542079 -1.08744619
+ [55]  1.86379827 -0.05960517  0.83090871  0.68932984  1.29567996 -2.39685145
+ [61] -2.67457759 -0.59889478  0.56961241  1.40078491 -0.80683885  0.67539990
+ [67]  0.04753137 -0.76168377  0.00382858  1.38138811  0.66190632  0.62258301
+ [73] -0.06982588 -0.65399882  1.15377707  0.76944950  0.05079102 -1.64269750
+ [79]  1.17883229 -0.39428330 -0.05896240  0.06441911  2.15383188  0.03704991
+ [85]  1.72221564  0.13556832  1.27040300 -1.07532423 -1.39539891 -1.43662199
+ [91] -2.56049865  0.54199732  0.10811705  0.47095589  1.17126366 -0.39678954
+ [97] -0.10352434 -0.15012162 -2.56628511 -0.73518944</code></pre>
 </div>
 </div>
 </section>
@@ -701,45 +698,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(random_numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] 0.6618774638 0.0825588885 0.4808186272 0.2850932614 0.4393222593
-  [6] 0.0709930270 0.9007767797 0.9037743988 0.0650724238 0.7354078882
- [11] 0.5739673213 0.4567766839 0.3892955224 0.3051117114 0.9949570361
- [16] 0.6261569641 0.8603636753 0.0326102264 0.8136143221 0.3885573482
- [21] 0.8286615887 0.8853885334 0.6964525713 0.8885879803 0.0623804294
- [26] 0.2611310009 0.8112006374 0.1536685955 0.1631412734 0.2673654086
- [31] 0.1202295041 0.7190573262 0.4178310032 0.2959203492 0.6757242789
- [36] 0.3795058283 0.8972520733 0.8815136671 0.6246562058 0.9997801920
- [41] 0.9044869281 0.7260065172 0.4430923150 0.2133538853 0.7441003891
- [46] 0.7180105553 0.5021286253 0.0115388590 0.2178466513 0.5389892056
- [51] 0.2294833602 0.8885815684 0.6816119661 0.3313937427 0.2115073884
- [56] 0.6469147238 0.5286242415 0.4952224763 0.7775625726 0.1293347757
- [61] 0.0002599829 0.6219817912 0.7292633792 0.7263742283 0.0241404343
- [66] 0.3716499524 0.1681278152 0.0656609375 0.9557223152 0.5486943966
- [71] 0.1633711024 0.6168260933 0.2423159576 0.5892196007 0.9771701826
- [76] 0.6254412956 0.3539273001 0.3363434665 0.3822676111 0.5215425950
- [81] 0.9441126913 0.4299538473 0.5317686961 0.6697443158 0.1289668060
- [86] 0.9212081002 0.5461372233 0.6927577523 0.9063330756 0.4078946847
- [91] 0.5830422665 0.9945663996 0.6599046420 0.9211726282 0.3722742533
- [96] 0.7789323055 0.4197965285 0.3926534245 0.3493199616 0.2349970599</code></pre>
+<pre><code>  [1] 0.59712401 0.58058179 0.53759636 0.87305305 0.91932771 0.84811133
+  [7] 0.63441629 0.22349554 0.32139707 0.14988524 0.22693544 0.82824488
+ [13] 0.55854381 0.33152966 0.53096108 0.71418348 0.59565259 0.52281906
+ [19] 0.51816186 0.03835797 0.93640382 0.74352076 0.89860841 0.38451214
+ [25] 0.16534128 0.35760759 0.36393783 0.26622037 0.46389721 0.03521962
+ [31] 0.90964114 0.14964462 0.51138228 0.27886819 0.87379343 0.04714255
+ [37] 0.70089400 0.65801689 0.97308181 0.61814427 0.04291832 0.43429654
+ [43] 0.20623507 0.95946963 0.98602956 0.74709343 0.75805080 0.30267278
+ [49] 0.24280921 0.40306419 0.26959395 0.68158151 0.34845527 0.14049783
+ [55] 0.06539532 0.82431823 0.98423139 0.34284012 0.29330486 0.87336733
+ [61] 0.97985745 0.67590122 0.26398151 0.48055508 0.37830370 0.17374392
+ [67] 0.98301064 0.74842178 0.62053946 0.34013331 0.43561124 0.51168296
+ [73] 0.51098431 0.39758545 0.49878033 0.35993092 0.75066806 0.73614343
+ [79] 0.65385458 0.23987642 0.07075231 0.42341117 0.81271274 0.08468675
+ [85] 0.51949145 0.31017443 0.74527249 0.53790404 0.37490041 0.30186603
+ [91] 0.45965049 0.53146770 0.21534394 0.59273962 0.79047139 0.49634919
+ [97] 0.24147527 0.44026154 0.21983773 0.66651646</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example 2</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>random_numbers <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">100</span>, <span class="at">min =</span> <span class="dv">10</span>, <span class="at">max =</span> <span class="dv">85</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(random_numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] 16.72110 26.66261 67.81397 67.47033 58.62791 73.41388 15.15571 50.39444
-  [9] 58.26884 66.79678 84.83469 58.15906 66.59881 82.33287 28.24554 24.87615
- [17] 20.45969 60.76392 64.98797 70.90830 13.05080 11.46182 17.57352 53.84042
- [25] 40.17914 56.23322 15.87390 39.80567 24.27425 43.15309 34.75498 52.02834
- [33] 37.19807 30.62056 52.02106 64.46380 10.06162 70.60802 10.42587 29.60432
- [41] 78.76778 80.58548 69.90436 78.35281 31.99873 71.51949 72.23237 14.83061
- [49] 81.55508 80.68070 32.57603 68.79264 82.12354 69.52098 36.94138 68.83213
- [57] 53.81891 12.08001 39.71449 33.89305 49.81780 45.51690 32.27094 77.99559
- [65] 52.55767 75.58676 26.60948 84.32248 39.78180 16.57906 25.86080 77.73124
- [73] 21.40431 76.67366 19.15932 30.10080 44.70707 75.82822 15.97047 11.52975
- [81] 35.07488 64.74885 35.45793 11.60888 54.95427 14.50651 29.49464 68.09874
- [89] 45.05434 80.79586 42.17472 63.05162 48.46376 71.91776 60.06925 61.26093
- [97] 65.75555 40.65798 26.52919 12.15700</code></pre>
+<pre><code>  [1] 64.65240 36.25086 73.66394 13.52213 29.91597 13.89818 33.20226 69.69939
+  [9] 67.77679 66.38634 81.12249 74.38148 34.46445 37.92923 17.37680 23.01795
+ [17] 73.51589 82.04072 77.19517 50.70852 41.20762 40.14262 13.43471 79.84402
+ [25] 45.13884 14.62102 16.39487 36.04026 26.38426 27.85634 68.64394 76.14605
+ [33] 64.21678 16.78377 71.19765 45.47659 45.10325 40.06413 31.69710 74.64906
+ [41] 47.32565 27.80933 36.71329 16.46837 49.51981 13.71022 51.24088 37.30315
+ [49] 70.42618 75.72347 39.91727 30.82179 37.70927 79.26537 43.37546 80.82352
+ [57] 26.25631 78.09199 80.86859 59.13789 68.55911 18.40615 33.46637 14.94283
+ [65] 30.13577 34.88134 33.04043 25.96393 82.70530 38.77765 71.39840 24.61482
+ [73] 50.08263 42.92718 79.10827 31.84627 49.17656 35.07062 77.17618 51.20359
+ [81] 25.33663 46.43443 43.65259 29.97668 34.26658 52.28467 47.19197 29.25908
+ [89] 34.16286 20.63286 70.70294 73.43893 47.37362 80.38742 17.32336 65.07119
+ [97] 75.53205 29.42248 28.37177 51.33372</code></pre>
 </div>
 </div>
 </section>
@@ -792,26 +786,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-45"><a href="#cb43-45" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mean_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1549795</code></pre>
+<pre><code>[1] 0.8561326</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mode_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "-1.10914880500174"   "-0.76383873635224"   "-0.612945657666588" 
- [4] "-0.0431834087558775" "0.0292484062899891"  "0.0300428287841425" 
- [7] "0.71048154324384"    "1.01695256984895"    "1.07004361867346"   
-[10] "1.22214311566423"   </code></pre>
+<pre><code> [1] "-1.5638899693212"   "-0.512128035979204" "0.266670602476026" 
+ [4] "0.718449597576394"  "0.753761665464266"  "1.17639548926585"  
+ [7] "1.44025771537439"   "1.83949996991032"   "2.09498024835513"  
+[10] "2.34732860067887"  </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(median_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.02964562</code></pre>
+<pre><code>[1] 0.9650786</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(range_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.331292</code></pre>
+<pre><code>[1] 3.911219</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sd_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8253217</code></pre>
+<pre><code>[1] 1.214484</code></pre>
 </div>
 </div>
 </section>
@@ -943,7 +937,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>total_time <span class="ot">&lt;-</span> end_time <span class="sc">-</span> start_time</span>
 <span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>total_time</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.006674051 secs</code></pre>
+<pre><code>Time difference of 0.007119894 secs</code></pre>
 </div>
 </div>
 </section>
@@ -952,22 +946,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using the read.csv function</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"matrix.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in file(file, "rt"): cannot open file 'matrix.csv': No such file or
+directory</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in file(file, "rt"): cannot open the connection</code></pre>
+</div>
 </div>
 </section>
 <section id="create-a-variable-that-stores-a-20x20-matrix-of-random-numbers" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-variable-that-stores-a-20x20-matrix-of-random-numbers">create a variable that stores a 20x20 matrix of random numbers</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">ncol=</span><span class="dv">20</span>,<span class="at">nrow=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">ncol=</span><span class="dv">20</span>,<span class="at">nrow=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="output-any-matrix-to-a-txt-file-using-commas-or-tabs-to-separate-column-values-and-new-lines-to-separate-row-values" class="level2">
 <h2 class="anchored" data-anchor-id="output-any-matrix-to-a-txt-file-using-commas-or-tabs-to-separate-column-values-and-new-lines-to-separate-row-values">output any matrix to a txt file using commas or tabs to separate column values, and new lines to separate row values</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">4</span>)</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(m, <span class="at">file =</span> <span class="st">"matrix.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(m, <span class="at">file =</span> <span class="st">"matrix.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">4</span>)</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(m, <span class="at">file =</span> <span class="st">"matrix.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(m, <span class="at">file =</span> <span class="st">"matrix.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="harder-problems" class="level3">
 <h3 class="anchored" data-anchor-id="harder-problems">HARDER PROBLEMS</h3>
@@ -976,67 +977,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="problem-1-fizzbuzz" class="level2">
 <h2 class="anchored" data-anchor-id="problem-1-fizzbuzz">Problem 1 (FizzBuzz)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>fizz_buzz <span class="ot">&lt;-</span> <span class="cf">function</span>(limit) {</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>limit) {</span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">3</span> <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> i <span class="sc">%%</span> <span class="dv">5</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="st">"FizzBuzz"</span>)</span>
-<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">3</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="st">"Fizz"</span>)</span>
-<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">5</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="st">"Buzz"</span>)</span>
-<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(i)</span>
-<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>fizz_buzz <span class="ot">&lt;-</span> <span class="cf">function</span>(limit) {</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>limit) {</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">3</span> <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> i <span class="sc">%%</span> <span class="dv">5</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="st">"FizzBuzz"</span>)</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">3</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="st">"Fizz"</span>)</span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">5</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="st">"Buzz"</span>)</span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(i)</span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="problem-1-encrypt-and-decrypt-the-alphabet" class="level2">
 <h2 class="anchored" data-anchor-id="problem-1-encrypt-and-decrypt-the-alphabet">Problem 1 (Encrypt and Decrypt the Alphabet)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to encrypt </span></span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>sub_key <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>, <span class="st">"r"</span>, <span class="st">"t"</span>, <span class="st">"y"</span>, <span class="st">"u"</span>, <span class="st">"i"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"a"</span>, <span class="st">"s"</span>, <span class="st">"d"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"z"</span>, <span class="st">"x"</span>, <span class="st">"c"</span>, <span class="st">"v"</span>, <span class="st">"b"</span>, <span class="st">"n"</span>, <span class="st">"m"</span>)</span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>message <span class="ot">&lt;-</span> <span class="st">"hello world"</span></span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>message <span class="ot">&lt;-</span> <span class="fu">tolower</span>(message)</span>
-<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>encrypted_message <span class="ot">&lt;-</span> <span class="st">""</span></span>
-<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(message)) {</span>
-<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a>  char <span class="ot">&lt;-</span> <span class="fu">substring</span>(message, i, i)</span>
-<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (char <span class="sc">%in%</span> letters) {</span>
-<span id="cb84-12"><a href="#cb84-12" aria-hidden="true" tabindex="-1"></a>    index <span class="ot">&lt;-</span> <span class="fu">match</span>(char, letters)</span>
-<span id="cb84-13"><a href="#cb84-13" aria-hidden="true" tabindex="-1"></a>    encrypted_char <span class="ot">&lt;-</span> sub_key[index]</span>
-<span id="cb84-14"><a href="#cb84-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb84-15"><a href="#cb84-15" aria-hidden="true" tabindex="-1"></a>    encrypted_char <span class="ot">&lt;-</span> char</span>
-<span id="cb84-16"><a href="#cb84-16" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb84-17"><a href="#cb84-17" aria-hidden="true" tabindex="-1"></a>  encrypted_message <span class="ot">&lt;-</span> <span class="fu">paste</span>(encrypted_message, encrypted_char, <span class="at">sep =</span> <span class="st">""</span>)</span>
-<span id="cb84-18"><a href="#cb84-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb84-19"><a href="#cb84-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-20"><a href="#cb84-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(encrypted_message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to encrypt </span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>sub_key <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>, <span class="st">"r"</span>, <span class="st">"t"</span>, <span class="st">"y"</span>, <span class="st">"u"</span>, <span class="st">"i"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"a"</span>, <span class="st">"s"</span>, <span class="st">"d"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"z"</span>, <span class="st">"x"</span>, <span class="st">"c"</span>, <span class="st">"v"</span>, <span class="st">"b"</span>, <span class="st">"n"</span>, <span class="st">"m"</span>)</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>message <span class="ot">&lt;-</span> <span class="st">"hello world"</span></span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>message <span class="ot">&lt;-</span> <span class="fu">tolower</span>(message)</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a>encrypted_message <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb86-9"><a href="#cb86-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(message)) {</span>
+<span id="cb86-10"><a href="#cb86-10" aria-hidden="true" tabindex="-1"></a>  char <span class="ot">&lt;-</span> <span class="fu">substring</span>(message, i, i)</span>
+<span id="cb86-11"><a href="#cb86-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (char <span class="sc">%in%</span> letters) {</span>
+<span id="cb86-12"><a href="#cb86-12" aria-hidden="true" tabindex="-1"></a>    index <span class="ot">&lt;-</span> <span class="fu">match</span>(char, letters)</span>
+<span id="cb86-13"><a href="#cb86-13" aria-hidden="true" tabindex="-1"></a>    encrypted_char <span class="ot">&lt;-</span> sub_key[index]</span>
+<span id="cb86-14"><a href="#cb86-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb86-15"><a href="#cb86-15" aria-hidden="true" tabindex="-1"></a>    encrypted_char <span class="ot">&lt;-</span> char</span>
+<span id="cb86-16"><a href="#cb86-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb86-17"><a href="#cb86-17" aria-hidden="true" tabindex="-1"></a>  encrypted_message <span class="ot">&lt;-</span> <span class="fu">paste</span>(encrypted_message, encrypted_char, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb86-18"><a href="#cb86-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb86-19"><a href="#cb86-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-20"><a href="#cb86-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(encrypted_message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "itssg vgksr"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to decrypt</span></span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>sub_key <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>, <span class="st">"r"</span>, <span class="st">"t"</span>, <span class="st">"y"</span>, <span class="st">"u"</span>, <span class="st">"i"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"a"</span>, <span class="st">"s"</span>, <span class="st">"d"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"z"</span>, <span class="st">"x"</span>, <span class="st">"c"</span>, <span class="st">"v"</span>, <span class="st">"b"</span>, <span class="st">"n"</span>, <span class="st">"m"</span>)</span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>encrypted_message <span class="ot">&lt;-</span> <span class="st">"uryyb jbeyq"</span></span>
-<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>encrypted_message <span class="ot">&lt;-</span> <span class="fu">tolower</span>(encrypted_message)</span>
-<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a>decrypted_message <span class="ot">&lt;-</span> <span class="st">""</span></span>
-<span id="cb86-9"><a href="#cb86-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(encrypted_message)) {</span>
-<span id="cb86-10"><a href="#cb86-10" aria-hidden="true" tabindex="-1"></a>  char <span class="ot">&lt;-</span> <span class="fu">substring</span>(encrypted_message, i, i)</span>
-<span id="cb86-11"><a href="#cb86-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (char <span class="sc">%in%</span> letters) {</span>
-<span id="cb86-12"><a href="#cb86-12" aria-hidden="true" tabindex="-1"></a>    index <span class="ot">&lt;-</span> <span class="fu">match</span>(char, sub_key)</span>
-<span id="cb86-13"><a href="#cb86-13" aria-hidden="true" tabindex="-1"></a>    decrypted_char <span class="ot">&lt;-</span> letters[index]</span>
-<span id="cb86-14"><a href="#cb86-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb86-15"><a href="#cb86-15" aria-hidden="true" tabindex="-1"></a>    decrypted_char <span class="ot">&lt;-</span> char</span>
-<span id="cb86-16"><a href="#cb86-16" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb86-17"><a href="#cb86-17" aria-hidden="true" tabindex="-1"></a>  decrypted_message <span class="ot">&lt;-</span> <span class="fu">paste</span>(decrypted_message, decrypted_char, <span class="at">sep =</span> <span class="st">""</span>)</span>
-<span id="cb86-18"><a href="#cb86-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb86-19"><a href="#cb86-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-20"><a href="#cb86-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(decrypted_message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to decrypt</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>sub_key <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>, <span class="st">"r"</span>, <span class="st">"t"</span>, <span class="st">"y"</span>, <span class="st">"u"</span>, <span class="st">"i"</span>, <span class="st">"o"</span>, <span class="st">"p"</span>, <span class="st">"a"</span>, <span class="st">"s"</span>, <span class="st">"d"</span>, <span class="st">"f"</span>, <span class="st">"g"</span>, <span class="st">"h"</span>, <span class="st">"j"</span>, <span class="st">"k"</span>, <span class="st">"l"</span>, <span class="st">"z"</span>, <span class="st">"x"</span>, <span class="st">"c"</span>, <span class="st">"v"</span>, <span class="st">"b"</span>, <span class="st">"n"</span>, <span class="st">"m"</span>)</span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>encrypted_message <span class="ot">&lt;-</span> <span class="st">"uryyb jbeyq"</span></span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>encrypted_message <span class="ot">&lt;-</span> <span class="fu">tolower</span>(encrypted_message)</span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>decrypted_message <span class="ot">&lt;-</span> <span class="st">""</span></span>
+<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(encrypted_message)) {</span>
+<span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a>  char <span class="ot">&lt;-</span> <span class="fu">substring</span>(encrypted_message, i, i)</span>
+<span id="cb88-11"><a href="#cb88-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (char <span class="sc">%in%</span> letters) {</span>
+<span id="cb88-12"><a href="#cb88-12" aria-hidden="true" tabindex="-1"></a>    index <span class="ot">&lt;-</span> <span class="fu">match</span>(char, sub_key)</span>
+<span id="cb88-13"><a href="#cb88-13" aria-hidden="true" tabindex="-1"></a>    decrypted_char <span class="ot">&lt;-</span> letters[index]</span>
+<span id="cb88-14"><a href="#cb88-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb88-15"><a href="#cb88-15" aria-hidden="true" tabindex="-1"></a>    decrypted_char <span class="ot">&lt;-</span> char</span>
+<span id="cb88-16"><a href="#cb88-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb88-17"><a href="#cb88-17" aria-hidden="true" tabindex="-1"></a>  decrypted_message <span class="ot">&lt;-</span> <span class="fu">paste</span>(decrypted_message, decrypted_char, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb88-18"><a href="#cb88-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb88-19"><a href="#cb88-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-20"><a href="#cb88-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(decrypted_message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "gdffx qxcfa"</code></pre>
 </div>
