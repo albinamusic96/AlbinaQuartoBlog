@@ -2,9 +2,7 @@
 title: "Tidy Tuesday 2"
 author: "Albina Music"
 date: "2023-05-03"
-categories: [qmd notes]
-execute:
-  error: true
+categories: [tidytues]
 ---
 
 ```{r}

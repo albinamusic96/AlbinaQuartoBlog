@@ -2,7 +2,7 @@
 title: "Tidy Tuesday 1"
 author: "Albina Music"
 date: "2023-05-03"
-categories: [qmd notes]
+categories: [tidytues]
 ---
 
 ## load the data and packages
