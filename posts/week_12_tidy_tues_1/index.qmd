@@ -56,3 +56,29 @@ ggplot(mice_count_by_year_species, aes(x=year,
   ggtitle("Mice Count By Year")+
   scale_x_continuous(breaks=seq(1980,2020,5))
 ```
+
+```{r}
+ggplot(mice_count_by_year_species, aes(x= year, 
+                                       y=n, 
+                                       color=species))+
+  geom_line() +
+  geom_point() +
+  ggtitle("Mice count by year and species")+
+  scale_x_continuous(breaks=seq(1980,2020,5)) +
+  facet_wrap(~species)
+```
+## Pregnancy by month
+
+```{r}
+
+monthly_data <- surveys %>%
+  mutate(month_string = lubridate::month(censusdate,label= T)) %>%
+  group_by(month) %>%
+  count(pregnant) %>%
+  pivot_wider(names_from=pregnant, values_from = n) %>%
+  mutate(proportion_pregnant = P/(P+`NA`))
+
+ggplot(monthly_data, aes(x=month, y=proportion_pregnant))+
+  geom_line()
+
+```
