@@ -5,10 +5,302 @@ date: "2023-02-18"
 categories: [qmd notes]
 ---
 
-Write a new blog post and submit the link to this assignment on blackboard. Write your blog around the three big themes:
+```{r}
+#loads ggplot2, and some example data sets
+library(tidyverse)
 
-Data types: Show that you understand what is available to you in R. Note also, this goal overlaps with part of the midterm project. See the appendix on Data Types in the textbook for help. Write notes and R code chunks to demonstrate your knowledge
+# the starwars data is loaded by tidyverse
+# assign the starwars dataset to a variable name
+starwars_copy <- starwars
 
-Tidy Data: Show that you understand what this means. Give an example of data this is in tidy format, and data that is not.
+# check out some of the datatypes
+head(starwars_copy)
+class(starwars_copy$name)
+class(starwars_copy$height)
+class(starwars_copy$mass)
 
-ggplot2: We will continue learning about this across the semester. Show at a minimum that you can make a graph and add it to your blog. Try examples from the textbook. Show that you understand the layer concept. Identify aspects that are confusing to you so we can discuss them in class.
+class(starwars_copy$homeworld)
+
+# plot some variables
+ggplot(data = starwars_copy,
+       mapping = aes(x=height,y=mass) )+
+  geom_point()
+
+```
+
+## Data-types
+
+What is in a name?
+
+Everything is a function.
+
+### Object assignment
+
+This is one of the simplest things you could do in R. What is happening here?
+
+-   `a` is the name of a new object that is being created
+
+-   `<-` is the assignment operator. It looks like an arrow, with the `1` going into the `a`
+
+-   `1` is an object that is being assigned into `a`
+
+-   consequences: a new object with the name `a` is created. This new object has been assigned the content `1`.
+
+```{r}
+# assign 1 to object named a
+a <- 1
+1 -> b
+
+f <- 4 -> g
+```
+
+```{r}
+# look at the data type of object in a
+class(a)
+typeof(a)
+```
+
+### Kinds of data types
+
+#### Integers
+
+```{r}
+#integers (no decimals)
+# L specifies integer
+typeof(1L) 
+class(1L)
+is.integer(1L)
+as.integer(1.1) # coerces to integer
+as.integer(1.5) # rounds down
+as.integer(1.9) # rounds down
+
+integer(length = 5) #initialize a vector for integers
+
+is.integer(as.integer(1:5))
+```
+
+#### Numeric/doubles
+
+```{r}
+# decimal numbers
+# numbers without decimals default to numeric
+typeof(1) 
+class(1)
+is.numeric(1)
+as.numeric(1L) # coerces integer to numeric
+
+numeric(length = 5) #initialize a vector for doubles
+```
+
+#### Character
+
+Any text between quotes get's treated as a character string
+
+```{r}
+typeof("1") 
+class("1")
+is.character("1")
+as.character(1) # coerces numeric to character
+
+character(length = 5) #initialize a vector for character strings
+```
+
+#### Logical/Boolean
+
+Uppercase TRUE, or FALSE makes logical (binary) variables
+
+```{r}
+typeof(TRUE)
+class(TRUE)
+is.logical(FALSE)
+as.logical(1) # coerces 1 to TRUE
+as.logical(0) # coerces 0  to FALSE
+
+logical(length = 5) # initialize a logical vector
+```
+
+### Object types
+
+R has many object types to store individual elements, or collections of elements.
+
+### Vector
+
+```{r}
+# makes a vector with one thing in it
+one_thing <- 1
+two_things <- c(1,2) 
+many_things <- 1:100
+```
+
+### data.frame
+
+A table with rows and columns.
+
+```{r}
+my_df <- data.frame(a = 1:5,
+                    b = c("one","two","three","four","five"),
+                    random = runif(5,0,1))
+#print to see it
+my_df
+
+# access columns with $
+my_df$a == 1:5
+my_df$b
+
+## access rows or columns with [row,column]
+my_df[1,] # row 1, all columns
+my_df[,1] # column 1, all rows
+my_df[1:2,] # rows 1 to 2, all columns
+my_df[1:2, 3] # rows 1 to 2, but only for column 3
+
+```
+
+### Tibble
+
+A table with rows and columns.
+
+```{r}
+my_df <- tibble(a = 1:5,
+                    b = c("one","two","three","four","five"),
+                    random = runif(5,0,1))
+#print to see it
+my_df
+
+# access columns with $
+my_df$a
+my_df$b
+
+## access rows or columns with [row,column]
+my_df[1,] # row 1, all columns
+my_df[,1] # column 1, all rows
+my_df[1:2,] # rows 1 to 2, all columns
+my_df[1:2, 3] # rows 1 to 2, but only for column 3
+
+my_df
+```
+
+### lists
+
+```{r}
+
+```
+
+## Tidy data
+
+Tidy data codes observations in a table. Each observation has its own row. The columns contain characteristics of the observation. For example, a demographics table could have one row per person, and several columns describing features of the person. Or, an expriment may involve multiple measures of a dependent variable across people and conditions of an independent variable. In this case, each row would contain one measurement, and each column would code the conditions associated with the measurement.
+
+An example of wide vs. long data. In this example, the long-data is in tidy format. The accuracy measure is the dependent variable, and there is one row per measurement.
+
+<https://crumplab.com/programmingforpsych/dealing-with-data.html#standard-data-formats>
+
+## ggplot2
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+survey_data <- read_csv("https://psyteachr.github.io/ads-v2/data/survey_data.csv")
+
+head(survey_data)
+
+
+ggplot()
+
+ggplot(data = survey_data,
+       mapping = aes(x = wait_time,
+                     y = satisfaction)
+       )
+
+
+ggplot(survey_data, aes(x = wait_time, y = satisfaction))
+
+ggplot(survey_data, 
+       aes(x = wait_time, 
+           y = satisfaction)) + 
+  geom_point()
+
+ggplot(survey_data, 
+       aes(x = wait_time, 
+           y = satisfaction)) + 
+  geom_point(color="red")
+
+ggplot(survey_data, 
+       aes(x = wait_time, 
+           y = satisfaction)) + 
+  geom_point(color="black", size = 5) +
+   geom_point(color="#fa2fcb", size = 4) +
+  geom_smooth(method ="lm")
+  
+
+ggplot(survey_data, 
+       aes(x = wait_time, 
+           y = satisfaction,
+           color = wait_time,
+           size = satisfaction)) + 
+  geom_point()
+
+min(survey_data$wait_time)
+max(survey_data$wait_time)
+length(survey_data$wait_time)
+
+ggplot(data=survey_data, mapping= aes(x=wait_time))+
+  geom_histogram(bins=50, color="red") +
+  theme_classic()
+
+```
+
+## change figure output size
+
+```{r}
+#| fig-width: 250
+
+ggplot(data=survey_data, mapping= aes(x=wait_time))+
+  geom_histogram(bins=50, color="red") +
+  theme_classic()
+
+```
+
+## Random stuff I did in class
+
+```{r}
+typeof(10.0245435234534)
+typeof(10L)
+
+typeof(10)
+
+typeof("1")
+
+"one" < "two"
+
+"z" < "w"
+
+is.numeric(10)
+is.numeric("1")
+
+a <- c(1,2,3)
+is.numeric(a)
+
+is.numeric(starwars$name)
+is.numeric(starwars$mass)
+
+is.numeric(starwars$height)
+is.integer(starwars$height)
+
+class(starwars$height)
+head(starwars)
+
+class(starwars)
+class(starwars_copy)
+
+library(tidyverse)
+
+class(starwars)
+starwars
+
+starwars_copy <- starwars
+
+```
+
+```{r}
+survey_data <- read_csv("https://psyteachr.github.io/ads-v2/data/survey_data.csv")
+```

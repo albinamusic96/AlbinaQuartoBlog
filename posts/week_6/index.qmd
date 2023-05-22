@@ -4,3 +4,129 @@ author: "Albina Music"
 date: "2023-02-18"
 categories: [qmd notes]
 ---
+
+```{r}
+tweets <- readRDS("ncod_tweets.rds")
+```
+
+## 5.2 Summarise
+
+This is a function from the dplyr package.
+
+```{r}
+library(tidyverse) #loads dplyr as well
+
+favourite_summary <- summarise(tweets, # name of the data table
+                           mean_favs = mean(favorite_count),
+                           median_favs = median(favorite_count),
+                           min_favs = min(favorite_count),
+                           max_favs = max(favorite_count))
+
+knitr::kable(favourite_summary) #print output
+```
+
+We can add as many new functions as we want. Each one will apply a function of choice to the named column.
+
+For example, if wanted the standard deviation of the values in the column named `favorite_count`, then we added `sd_favs = sd(favorite_count)`.
+
+```{r}
+favourite_summary <- summarise(tweets,
+                           mean_favs = mean(favorite_count),
+                           median_favs = median(favorite_count),
+                           min_favs = min(favorite_count),
+                           max_favs = max(favorite_count),
+                           sd_favs = sd(favorite_count),
+                           mean_RTs = mean(retweet_count),
+                           median_RTs = median(retweet_count),
+                           min_RTs = min(retweet_count),
+                           max_RTs = max(retweet_count),
+                           sd_RTs = sd(favorite_count))
+
+knitr::kable(favourite_summary)
+```
+
+Example of plotting a histogram of the favorite counts, in log scale.
+
+```{r}
+ggplot(tweets, aes(x = favorite_count)) +
+  geom_histogram(bins = 25) +
+  scale_x_continuous(trans = "pseudo_log", 
+                     breaks = c(0, 1, 10, 100, 1000, 10000))
+```
+
+Another example of adding individual functions to summarise.
+
+```{r}
+tweet_summary <- tweets %>%
+  summarise(mean_favs = mean(favorite_count),
+            median_favs = quantile(favorite_count, .5),
+            n = n(), # count all rows
+            min_date = min(created_at), # find the minimum date
+            max_date = max(created_at)) # find the maximum date
+
+glimpse(tweet_summary)
+```
+
+Example of writing inline code.
+
+```{r}
+date_from <- tweet_summary$min_date %>% 
+  format("%d %B, %Y")
+date_to <- tweet_summary$max_date %>% 
+  format("%d %B, %Y")
+```
+
+There were `r tweet_summary$n` tweets between `r date_from` and `r date_to`.
+
+## 5.3.2 Pipes
+
+Example of using the pipe operate syntax `%>%`.
+
+```{r}
+tweets_per_user <- tweets %>%
+  count(screen_name, sort = TRUE)
+
+head(tweets_per_user)
+```
+
+## 5.4 Counting
+
+The count function counts the number of times each unique item occurs in a column. This is an example appplied to the `screen_name` column, which contains twitter usernames.
+
+```{r}
+tweets_per_user <- tweets %>%
+  count(screen_name, sort = TRUE)
+
+head(tweets_per_user)
+```
+
+## 5.5 Grouping
+
+Two ways to use the `group_by` function. Here we produce summaries for each level in the `verified` column.
+
+```{r}
+
+tweets_grouped <- tweets %>%
+  group_by(verified)
+
+verified <- tweets_grouped %>%
+  summarise(count = n(),
+            mean_favs = mean(favorite_count),
+            mean_retweets = mean(retweet_count)) %>%
+  ungroup()
+
+knitr::kable(verified)
+
+```
+
+```{r}
+
+verified <- tweets %>%
+  group_by(verified) %>%
+  summarise(count = n(),
+            mean_favs = mean(favorite_count),
+            mean_retweets = mean(retweet_count)) %>%
+  ungroup()
+
+knitr::kable(verified)
+```
